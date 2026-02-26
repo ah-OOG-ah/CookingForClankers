@@ -13,7 +13,8 @@ CfC has or will have:
   - Cooking timer(s) as appropriate.
   - Shopping list generator (reuse PLP1 for local instance?)
   - Animations on recipe pages.
-  - Customizeable serving size (amounts adjusted).
+  - Customizable serving size (amounts adjusted).
+  - Recipe sharing links
 - Favorites page, locally stored.
 - Fully static design (pretty sure we can't alter the webserver).
 
