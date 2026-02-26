@@ -3,6 +3,7 @@
 ## Major features
 
 CfC has or will have:
+
 - A homepage with centralized navigation (navbar, etc).
   - Highlighted Recipe(s) of the Day.
 - Recipe search.
@@ -19,6 +20,7 @@ CfC has or will have:
 - Fully static design (pretty sure we can't alter the webserver).
 
 ## TODO
+
 - Investigate backend capabilities. Some of the listed features would be trivial to implement given control over the backend, but I don't know how much we can do there.
 - Add more features, we get derated by 20% for having a large team.
 
