@@ -5,6 +5,7 @@
     "sass": "^1.97.3"
   },
   "scripts": {
-    "fmt": "npx prettier -w ."
+    "fmt": "npx prettier -w .",
+    "sass": "npx sass scss:css"
   }
 }
