@@ -24,7 +24,20 @@ CfC has or will have:
 
 ### Credits
 
+Dominic Antony
+- Main page structure and carousel
+- Wireframes
+- Sitemap
+
+Jonah Ebent
+- Logos (w/ Gemini)
+- Recipe card page
+
+Adrian Johnson
+- Presentation skeleton
+
 SFE128 data set/old CSC391 dataset, for recipe image sources.
 
+Gemini, for the logo.
+
 Grok, for the main page blurbs and "testimonials".
-SFE128 data set/old CSC391 dataset, for image sources.
