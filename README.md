@@ -20,3 +20,7 @@ CfC has or will have:
 
 ## TODO
 Investigate backend capabilities. Some of the listed features would be trivial to implement given control over the backend, but I don't know how much we can do there.
+
+### Credits
+
+SFE128 data set/old CSC391 dataset, for image sources.
