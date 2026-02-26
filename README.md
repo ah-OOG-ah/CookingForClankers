@@ -32,9 +32,11 @@ Dominic Antony
 Jonah Ebent
 - Logos (w/ Gemini)
 - Recipe card page
+- Presentation updates
+- Home page tweaks
 
 Adrian Johnson
-- Presentation skeleton
+- Presentation 1
 
 SFE128 data set/old CSC391 dataset, for recipe image sources.
 
