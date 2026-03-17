@@ -4,6 +4,9 @@
     "prettier": "^3.8.1",
     "sass": "^1.97.3"
   },
+  "devDependencies": {
+    "@types/node": "^25.5.0"
+  },
   "scripts": {
     "fmt": "npx prettier -w .",
     "sass": "npx sass scss:css"
