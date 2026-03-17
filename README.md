@@ -220,6 +220,7 @@ Jonah Ebent
 - Recipe card page
 - Presentation updates
 - Home page tweaks
+- Project organization
 
 Adrian Johnson
 
