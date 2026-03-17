@@ -40,6 +40,7 @@ CfC has or will have:
 - [ ] By now, all the [Required Features](#required-features) must be functional
 - [ ] Tasks 0-7 completed
 - [ ] Optional Features List
+- [ ] Some optional features started
 
 ### Milestone 3 - UX/UI Report
 
