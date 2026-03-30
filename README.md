@@ -86,7 +86,7 @@ Total Points From Standard Requirements = 80
     - 2/23: [Task 0](#-task-0-system-requirements--schedule)
     - 2/24: [Task 1](#-task-1-project-planning-and-wireframing)
     - 2/25: [Task 2](#-task-2-setting-up-the-basic-html-structure)
-  - 3/31: [Milestone 2](#milestone-2---supervisor-update)
+  - 4/7: [Milestone 2](#milestone-2---supervisor-update)
     - 3/19: [Task 3](#-task-3-styling-the-site-with-css)
     - 3/24: [Task 4](#-task-4-recipe-details-page)
     - 3/26: [Task 5](#-task-5-improving-user-interface-with-animation)
@@ -99,8 +99,8 @@ Total Points From Standard Requirements = 80
     - 4/28: [Task 10](#-task-10-implement-final-fixes)
 - [x] Pick one speaker for each presentation.
   - Presentation 1: Dominic Antony
-  - Presentation 2: Jonah Ebent
-  - Presentation 3: Adrian Johnson
+  - Presentation 2: Adrian Johnson
+  - Presentation 3: Jonah Ebent
   - Presentation 4: Dominic Antony
 - [x] Finish filling out the team details on the google spreadsheet, including
       the mode chosen.
