@@ -47,7 +47,6 @@ ${await response.text()}`,
     }
 
     for (const recipe of json) {
-      console.debug(recipe);
       if (recipe.id == id) return recipe;
     }
   }
@@ -60,23 +59,66 @@ ${await response.text()}`,
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const recipeId = urlParams.get("id");
-console.log("Recipe ID:", recipeId);
+console.debug("Recipe ID:", recipeId);
 // if (!recipeId) window.location.href = "404.html";
 
 const recipe = await fetchRecipeData(recipeId);
-console.log(recipe);
+console.debug(recipe);
 // if (!recipe) window.location.href = "404.html";
+
+document.querySelectorAll(".recipe-img-final").forEach((element) => {
+  element.innerHTML = `
+<img
+  src="${DATA_PATH}/images/${recipe.images[recipe.images.length - 1]}"
+  class="img-fluid rounded-start"
+  alt="${recipe.name}"
+/>`;
+});
 
 document
   .querySelectorAll(".recipe-name")
   .forEach((element) => (element.textContent = recipe.name));
 
-document.querySelectorAll(".recipe-img-final").forEach(
-  (element) =>
-    (element.innerHTML = `
-<img
-  src="${DATA_PATH}/images/${recipe.images[recipe.images.length - 1]}"
-  class="img-fluid rounded-start"
-  alt="${recipe.name}"
-/>`),
-);
+document
+  .querySelectorAll(".recipe-category")
+  .forEach((element) => (element.textContent = recipe.category));
+
+document.querySelectorAll(".recipe-dietary").forEach((element) => {
+  let dietaryThings = "";
+  for (const dietary of recipe.dietary) {
+    dietaryThings += `<li>${dietary}</li>`;
+  }
+  element.innerHTML = dietaryThings;
+});
+
+document
+  .querySelectorAll(".recipe-season")
+  .forEach((element) => (element.textContent = recipe.season));
+
+document
+  .querySelectorAll(".recipe-cuisine")
+  .forEach((element) => (element.textContent = recipe.cuisine));
+
+document
+  .querySelectorAll(".recipe-prep-time")
+  .forEach((element) => (element.textContent = recipe.prep_time));
+
+document
+  .querySelectorAll(".recipe-difficulty")
+  .forEach((element) => (element.textContent = recipe.difficulty));
+
+document.querySelectorAll(".recipe-ingredients").forEach((element) => {
+  let ingredients = "";
+  for (const ingredient of recipe.ingredients) {
+    ingredients += `<li>${ingredient}</li>`;
+  }
+  element.innerHTML = ingredients;
+});
+
+document.querySelectorAll(".recipe-steps").forEach((element) => {
+  let steps = "";
+  for (const step of recipe.steps) {
+    steps += `<li>${step}</li>`;
+  }
+  element.innerHTML = steps;
+});
