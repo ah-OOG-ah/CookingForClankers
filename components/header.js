@@ -1,10 +1,10 @@
 class Header extends HTMLElement {
-    constructor() {
-        super();
-    }
+  constructor() {
+    super();
+  }
 
-    connectedCallback() {
-        this.innerHTML = `
+  connectedCallback() {
+    this.innerHTML = `
     <nav class="navbar navbar-expand-sm">
       <div class="container-fluid">
         <div class="navbar-brand">
@@ -55,8 +55,8 @@ class Header extends HTMLElement {
     </nav>
 
     <hr />
-        `
-    }
+        `;
+  }
 }
 
-customElements.define('header-component', Header)
+customElements.define("header-component", Header);
