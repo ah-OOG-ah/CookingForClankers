@@ -38,7 +38,13 @@ CfC has or will have:
 ### Milestone 2 - Supervisor Update
 
 - [ ] By now, all the [Required Features](#required-features) must be functional
-- [ ] Tasks 0-7 completed
+- [ ] [Tasks](#tasks) 0-7 completed
+  - [x] [Task 2](#-task-2-setting-up-the-basic-html-structure)
+  - [x] [Task 3](#-task-3-styling-the-site-with-css)
+  - [ ] [Task 4](#-task-4-recipe-details-page)
+  - [ ] [Task 5](#-task-5-improving-user-interface-with-animation)
+  - [ ] [Task 6](#-task-6-adding-javascript-for-dynamic-recipe-listings)
+  - [ ] [Task 7](#-task-7-search-functionality)
 - [ ] Optional Features List
 - [ ] Some optional features started
 
