@@ -140,8 +140,11 @@ Total Points From Standard Requirements = 80
 
 **Goal**: Build the foundational structure of the site.
 
-- [x] Create an HTML file with sections for a homepage, recipe listings, and a
+- [ ] Create an HTML file with sections for a homepage, recipe listings, and a
       recipe detail page.
+  - [X] Homepage. 
+  - [ ] Individual pages for recipes. (One sample done)
+  - [ ] Index page.
 - [x] Add semantic tags for navigation, content, and footer.
 - [x] Link placeholder content to reflect the wireframe design.
 
