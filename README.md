@@ -19,6 +19,12 @@ CfC has or will have:
 - Favorites page, locally stored.
 - Fully static design (pretty sure we can't alter the webserver).
 
+To get sample data, run the following command:
+
+```bash
+scp -r <user>@csc391-vm1.eng.franciscan.edu:/srv/csc391support/files/for-realsies ./data
+```
+
 ## TODO
 
 - Investigate backend capabilities. Some of the listed features would be trivial
@@ -142,7 +148,7 @@ Total Points From Standard Requirements = 80
 
 - [ ] Create an HTML file with sections for a homepage, recipe listings, and a
       recipe detail page.
-  - [X] Homepage. 
+  - [x] Homepage.
   - [ ] Individual pages for recipes. (One sample done)
   - [ ] Index page.
 - [x] Add semantic tags for navigation, content, and footer.

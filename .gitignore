@@ -6,3 +6,4 @@
 *.scss.map
 bun.lock*
 node_modules
+data
