@@ -73,8 +73,8 @@ scp -r <user>@csc391-vm1.eng.franciscan.edu:/srv/csc391support/files/for-realsie
 - [ ] **Recipe Cards**: Interactive recipe cards with thumbnails, descriptions,
       and like buttons. (15 Points)
 - [ ] **Search Functionality**: Real-time search for recipes by name.(10 Points)
-- [ ] **Recipe Detail Pages**: Each page displays ingredients, instructions, and
-      additional details for the corresponding recipe. (15 Points)
+- [x] **Recipe Detail Pages**: Each page displays ingredients, instructions, and
+      additional details for the corresponding recipe. (15 Points) _JE_
 - [ ] **Favorites Page**: A dedicated page for saved recipes using persistent
       local storage. (10 Points)
 - [ ] **Visual Design** Appealing, functional, no seizure-induction elements.
@@ -163,13 +163,13 @@ Total Points From Standard Requirements = 80
   - _handled by Bootstrap_
 - [x] Implement a color scheme and typography consistent with the wireframe.
 
-### 🟡 Task 4: Recipe Details Page
+### 🟢 Task 4: Recipe Details Page
 
 **Goal**: Create individual examples of recipe pages with detailed information.
 
-- [ ] Link recipe cards to individual recipe detail pages.
-- [ ] Populate the detail page with data (e.g., ingredients, steps, and images).
-- [ ] Add a "Back to Homepage" button for navigation.
+- [x] Link recipe cards to individual recipe detail pages.
+- [x] Populate the detail page with data (e.g., ingredients, steps, and images).
+- [x] Add a "Back to Homepage" button for navigation.
 
 ### 🔴 Task 5: Improving User Interface with Animation
 
