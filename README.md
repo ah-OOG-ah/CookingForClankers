@@ -70,13 +70,14 @@ scp -r <user>@csc391-vm1.eng.franciscan.edu:/srv/csc391support/files/for-realsie
 ## Required Features
 
 - [x] **Homepage**: Includes a welcome message and featured recipe. (10 Points)
-- [ ] **Recipe Cards**: Interactive recipe cards with thumbnails, descriptions,
-      and like buttons. (15 Points)
+      _DA_
+- [x] **Recipe Cards**: Interactive recipe cards with thumbnails, descriptions,
+      and like buttons. (15 Points) _JE_
 - [ ] **Search Functionality**: Real-time search for recipes by name.(10 Points)
 - [x] **Recipe Detail Pages**: Each page displays ingredients, instructions, and
       additional details for the corresponding recipe. (15 Points) _JE_
-- [ ] **Favorites Page**: A dedicated page for saved recipes using persistent
-      local storage. (10 Points)
+- [x] **Favorites Page**: A dedicated page for saved recipes using persistent
+      local storage. (10 Points) _JE_
 - [ ] **Visual Design** Appealing, functional, no seizure-induction elements.
       Consistent color schemes, typography, and smooth animations. Wayfinding
       elements throughout the website. (20 Points)
