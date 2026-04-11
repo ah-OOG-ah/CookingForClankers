@@ -20201,6 +20201,16 @@ textarea.form-control-lg {
   font-size: larger;
 }
 
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
 .carousel-inner {
   margin-bottom: 50px;
 }

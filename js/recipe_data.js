@@ -28,7 +28,6 @@ const RECIPE_STORIES = "All_recipe_stories.json";
 export async function fetchRecipe(id) {
   if (id == null) return null;
   for (const fileName of RECIPE_FILES) {
-    // TODO make it work for /srv/csc391support/files/for-realsies
     const path = `${DATA_PATH}/recipes/${fileName}`;
     const response = await fetch(path);
     if (!response.ok) {

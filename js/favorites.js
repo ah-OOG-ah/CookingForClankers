@@ -1,7 +1,7 @@
 // favorites.js: responsible for ensuring all favorite buttons are in the
 // correct state and save to local storage
 
-// ⚠️ NOTE: INITFAVORITES() DEPENDS ON ALL FAVORITE-BTN ELEMENTS HAVING THE
+// ⚠️ NOTE: initFavorites() DEPENDS ON ALL FAVORITE-BTN ELEMENTS HAVING THE
 // `data-recipe-id` ATTRIBUTE SET
 
 const STORAGE_KEY = "favorites";
@@ -9,7 +9,7 @@ const ICON_CLASS = "bi";
 const FILLED_HEART = "bi-heart-fill";
 const UNFILLED_HEART = "bi-heart";
 
-function getFavorites() {
+export function getFavorites() {
   return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 }
 
