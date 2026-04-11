@@ -4,8 +4,10 @@ class Header extends HTMLElement {
   }
 
   connectedCallback() {
-    this.innerHTML = `
-    <nav class="navbar navbar-expand-sm">
+    const activePage = this.getAttribute("active-page");
+
+    this.innerHTML = /* html */ `
+    <nav class="navbar navbar-expand-sm border-bottom mb-4 px-4">
       <div class="container-fluid">
         <div class="navbar-brand">
           <a href="index.html">
@@ -32,13 +34,13 @@ class Header extends HTMLElement {
           </form>
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">HOME</a>
+              <a class="nav-link ${activePage === "HOME" ? "active" : ""}" href="index.html">HOME</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="404.html">INDEX</a>
+              <a class="nav-link ${activePage === "INDEX" ? "active" : ""}" href="recipe-index.html">INDEX</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="favorites.html">FAVORITES</a>
+              <a class="nav-link ${activePage === "FAVORITES" ? "active" : ""}" href="favorites.html">FAVORITES</a>
             </li>
           </ul>
         </div>
@@ -56,8 +58,6 @@ class Header extends HTMLElement {
         </button>
       </div>
     </nav>
-
-    <hr />
         `;
   }
 }

@@ -4,17 +4,25 @@ class Footer extends HTMLElement {
   }
 
   connectedCallback() {
-    this.innerHTML = `
-    <footer>
-      <hr />
-      <p>Blah blah blah boring legal</p>
-      <p>Check out our <a href="https://github.com/ah-OOG-ah/CookingForClankers">GitHub</a></p>
+    this.innerHTML = /* html */ `
+    <footer class="border-top mt-4 p-4 text-center">
+      <a
+        href="https://github.com/ah-OOG-ah/CookingForClankers"
+        target="blank"
+        target="noopener noreferrer"
+        class="text-light"
+      >
+        <i class="bi bi-github fs-1"></i>
+      </a>
       <!--suppress CheckImageSize -->
-      <img
-        src="imgs/logo.png"
-        alt="Cooking for Clankers: Recipes by Robots, for Robots"
-        height="128"
-      />
+      <!--
+        <img
+          class="rounded shadow"
+          src="imgs/logo.png"
+          alt="Cooking for Clankers: Recipes by Robots, for Robots"
+          height="128"
+        />
+      -->
     </footer>
         `;
   }
