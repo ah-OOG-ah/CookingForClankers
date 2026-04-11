@@ -143,14 +143,14 @@ Total Points From Standard Requirements = 80
 - [x] Develop wireframes for each page, focusing on usability and layout.
 - [x] Create a timeline of tasks, including any content development (see above)
 
-### 🟢 Task 2: Setting Up the Basic HTML Structure
+### 🟡 Task 2: Setting Up the Basic HTML Structure
 
 **Goal**: Build the foundational structure of the site.
 
 - [ ] Create an HTML file with sections for a homepage, recipe listings, and a
       recipe detail page.
   - [x] Homepage.
-  - [ ] Individual pages for recipes. (One sample done)
+  - [x] Individual pages for recipes. (One sample done)
   - [ ] Index page.
 - [x] Add semantic tags for navigation, content, and footer.
 - [x] Link placeholder content to reflect the wireframe design.
@@ -180,11 +180,11 @@ Total Points From Standard Requirements = 80
 - [ ] Implement smooth scrolling for navigation.
 - [ ] Add feedback animations for buttons (e.g., a "Favorite" button toggle).
 
-### 🔴 Task 6: Adding JavaScript for Dynamic Recipe Listings
+### 🟡 Task 6: Adding JavaScript for Dynamic Recipe Listings
 
 **Goal**: Display recipe data dynamically using JavaScript.
 
-- [ ] Use a sample JSON file or JavaScript object to store recipe data.
+- [x] Use a sample JSON file or JavaScript object to store recipe data.
 - [ ] Write JavaScript to dynamically populate recipe cards on the homepage.
 - [ ] Implement a "Load More" button for paginated recipe listings.
 
