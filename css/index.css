@@ -20255,7 +20255,7 @@ textarea.form-control-lg {
   transition: transform 0.4s ease;
 }
 .favorites-page .card:hover .recipe-img-final, .favorites-page .card:hover img {
-  tranform: scale(1.08);
+  transform: scale(1.08);
 }
 
 html {

@@ -176,9 +176,9 @@ Total Points From Standard Requirements = 80
 
 **Goal**: Add smooth transitions and interactivity.
 
-- [X] Use CSS animations for hover effects on buttons and recipe cards._AJ
-- [X] Implement smooth scrolling for navigation._AJ
-- [X] Add feedback animations for buttons (e.g., a "Favorite" button toggle)._AJ
+- [x] Use CSS animations for hover effects on buttons and recipe cards.\_AJ
+- [x] Implement smooth scrolling for navigation.\_AJ
+- [x] Add feedback animations for buttons (e.g., a "Favorite" button toggle).\_AJ
 
 ### 🟡 Task 6: Adding JavaScript for Dynamic Recipe Listings
 
@@ -243,7 +243,6 @@ Adrian Johnson
 - Presentation 1
 - animations for buttons and cards
 - added event listener to make cards clickable.
-
 
 SFE128 data set/old CSC391 dataset, for recipe image sources.
 

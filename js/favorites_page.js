@@ -37,7 +37,6 @@ async function populatePage(favoriteIds) {
 
       window.location.href = `recipe.html?id=${id}`;
     });
-
   }
 }
 
