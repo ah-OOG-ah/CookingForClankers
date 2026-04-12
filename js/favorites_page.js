@@ -30,6 +30,14 @@ async function populatePage(favoriteIds) {
     recipeCard.setAttribute("story", `${story.split(".")[0]}.`);
 
     container.appendChild(recipeCard);
+
+    recipeCard.style.cursor = "pointer";
+    recipeCard.addEventListener("click", (e) => {
+      if (e.target.closest(".favorite-btn")) return;
+
+      window.location.href = `recipe.html?id=${id}`;
+    });
+
   }
 }
 
