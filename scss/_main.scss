@@ -78,4 +78,13 @@ $bootstrap-icons-font-dir: "../node_modules/bootstrap-icons/font/fonts";
 
 html {
   scroll-behavior: smooth;
+  // always take up 100% of the screen
+  height: 100%;
+}
+
+body {
+  // these parameters allow for sticky footer on small pages
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
