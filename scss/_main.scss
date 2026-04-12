@@ -63,12 +63,12 @@ $bootstrap-icons-font-dir: "../node_modules/bootstrap-icons/font/fonts";
 
     &:hover .recipe-img-final,
     &:hover img {
-        tranform: scale(1.08);
+        transform: scale(1.08);
     }
 }
 
 html {
-    scroll-behavior:smooth;
+    scroll-behavior: smooth;
 }
 
 
