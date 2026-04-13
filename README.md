@@ -192,8 +192,8 @@ Total Points From Standard Requirements = 80
 
 **Goal**: Enable users to search for recipes.
 
-- [ ] Add a search bar to the website.
-- [ ] Write JavaScript to filter recipes based on user input.
+- [x] Add a search bar to the website.
+- [x] Write JavaScript to filter recipes based on user input.
 - [ ] Highlight the search results and ensure usability.
 
 ### 🔴 Task 8: Optional Features (longer task)
@@ -229,6 +229,8 @@ Dominic Antony
 - Main page structure and carousel
 - Wireframes
 - Sitemap
+- Index page
+- Search page
 
 Jonah Ebent
 
