@@ -1,5 +1,5 @@
 import { initFavorites } from "./favorites.js";
-import { fetchRecipe, fetchRecipeStory, DATA_PATH } from "./recipe_data.js";
+import {fetchRecipe, fetchRecipeStory, recipeImage} from "./recipe_data.js";
 
 const populateRecipeData = (recipe) => {
   console.debug(recipe);
@@ -8,7 +8,7 @@ const populateRecipeData = (recipe) => {
   document.querySelectorAll(".recipe-img-final").forEach((element) => {
     element.innerHTML = `
 <img
-  src="${DATA_PATH}/images/${recipe.images[recipe.images.length - 1]}"
+  src="${recipeImage(recipe)}"
   class="img-fluid rounded-start"
   alt="${recipe.name}"
 />`;

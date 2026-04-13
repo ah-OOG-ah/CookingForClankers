@@ -82,3 +82,7 @@ ${await response.text()}`,
   console.error(`Could not find story for recipe ${id}`);
   return null;
 }
+
+export function recipeImage(recipe) {
+    return `${DATA_PATH}/images/${recipe.images[recipe.images.length - 1]}`;
+}
