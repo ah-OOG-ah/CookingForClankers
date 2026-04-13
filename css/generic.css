@@ -20200,11 +20200,13 @@ textarea.form-control-lg {
   color: red;
   font-size: 1.2rem;
   display: inline-flex;
-  align-items: center;
+  vertical-align: center;
   justify-content: center;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  padding-left: 1rem;
+  padding-right: 0.5rem;
 }
 .favorite-btn:hover {
   transform: translateY(-3px);

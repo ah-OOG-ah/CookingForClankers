@@ -81,3 +81,12 @@ document
 initFavorites();
 fetchRecipe(recipeId).then(populateRecipeData);
 fetchRecipeStory(recipeId).then(populateRecipeStory);
+
+const shareBtn = document.getElementById("shareBtn");
+function copyShareLink() {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    shareBtn.innerText = "Copied!";
+    setTimeout(() => (shareBtn.innerText = "Share"), 1000);
+  });
+}
+shareBtn.addEventListener("click", copyShareLink);
