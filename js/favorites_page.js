@@ -1,5 +1,10 @@
 import { getFavorites, initFavorites } from "./favorites.js";
-import { fetchRecipe, fetchRecipeStory, DATA_PATH } from "./recipe_data.js";
+import {
+  fetchRecipe,
+  fetchRecipeStory,
+  storyPreview,
+  recipeImage,
+} from "./recipe_data.js";
 
 async function populatePage(favoriteIds) {
   const container = document.getElementById("favoritesContainer");
@@ -20,14 +25,11 @@ async function populatePage(favoriteIds) {
     ]);
 
     const recipeCard = document.createElement("recipe-card");
-    recipeCard.className = "col-4";
+    recipeCard.className = "col";
     recipeCard.setAttribute("id", id);
     recipeCard.setAttribute("name", recipe.name);
-    recipeCard.setAttribute(
-      "img-name",
-      recipe.images[recipe.images.length - 1],
-    );
-    recipeCard.setAttribute("story", `${story.split(".")[0]}.`);
+    recipeCard.setAttribute("img-src", recipeImage(recipe));
+    recipeCard.setAttribute("story", storyPreview(story));
 
     container.appendChild(recipeCard);
 

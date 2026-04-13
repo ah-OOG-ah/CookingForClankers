@@ -20,10 +20,13 @@
     ></script>
     <script type="module" src="js/favorites_page.js" defer></script>
   </head>
-  <body class="favorites-page">
+  <body>
     <header-component active-page="FAVORITES"></header-component>
     <main class="container">
-      <div class="d-flex flex-wrap gap-2" id="favoritesContainer"></div>
+      <div
+        class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-2"
+        id="favoritesContainer"
+      ></div>
     </main>
     <footer-component></footer-component>
   </body>

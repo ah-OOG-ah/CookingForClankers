@@ -9,7 +9,7 @@ class RecipeCard extends HTMLElement {
     // define data here
     const id = this.getAttribute("id");
     const name = this.getAttribute("name") || "Loading...";
-    const imgName = this.getAttribute("img-name");
+    const imgSrc = this.getAttribute("img-src");
     const story = this.getAttribute("story") || "Loading...";
     // ...
 
@@ -37,14 +37,13 @@ class RecipeCard extends HTMLElement {
             <i class="favorite-btn" role="button" data-recipe-id=${id}></i>
           </div>
           <img
-            src=${`${DATA_PATH}/images/${imgName}`}
+            src=${imgSrc}
             class="card-img"
           />
 
           <div class="card-body">
             <h5 class="card-title">${name}</h5>
             <p class="card-text">${story}</p>
-            <a href="recipe.html?id=${id}" class="card-link">Go to recipe</a>
           </div>
         </article>
         `;

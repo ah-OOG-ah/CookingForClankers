@@ -168,17 +168,17 @@ Total Points From Standard Requirements = 80
 
 **Goal**: Create individual examples of recipe pages with detailed information.
 
-- [x] Link recipe cards to individual recipe detail pages.
-- [x] Populate the detail page with data (e.g., ingredients, steps, and images).
-- [x] Add a "Back to Homepage" button for navigation.
+- [x] Link recipe cards to individual recipe detail pages. _JE_
+- [x] Populate the detail page with data (e.g., ingredients, steps, and images). _JE_
+- [x] Add a "Back to Homepage" button for navigation. _JE_
 
 ### 🟢 Task 5: Improving User Interface with Animation
 
 **Goal**: Add smooth transitions and interactivity.
 
-- [x] Use CSS animations for hover effects on buttons and recipe cards.\_AJ
-- [x] Implement smooth scrolling for navigation.\_AJ
-- [x] Add feedback animations for buttons (e.g., a "Favorite" button toggle).\_AJ
+- [x] Use CSS animations for hover effects on buttons and recipe cards. _AJ_
+- [x] Implement smooth scrolling for navigation. _AJ_
+- [x] Add feedback animations for buttons (e.g., a "Favorite" button toggle). _AJ_
 
 ### 🟡 Task 6: Adding JavaScript for Dynamic Recipe Listings
 
@@ -236,10 +236,12 @@ Dominic Antony
 Jonah Ebent
 
 - Logos (w/ Gemini)
-- Recipe card page
+- Recipe detail page
 - Presentation updates
 - Home page tweaks
 - Project organization
+- Favorites page & functionality
+- Header/footer
 
 Adrian Johnson
 
