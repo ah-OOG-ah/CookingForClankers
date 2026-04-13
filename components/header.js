@@ -21,13 +21,17 @@ class Header extends HTMLElement {
         </div>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <form class="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search recipes..."
-              aria-label="Search"
-            />
+          <form class="d-flex" role="search" action="search.html">
+            <label for="query">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search recipes..."
+                aria-label="Search"
+                name="query"
+                id="query"
+              />
+            </label>
             <button class="btn btn-outline-success" type="submit">
               SEARCH
             </button>
