@@ -1,5 +1,5 @@
 import { initFavorites } from "./favorites.js";
-import {fetchRecipe, fetchRecipeStory, recipeImage} from "./recipe_data.js";
+import { fetchRecipe, fetchRecipeStory, recipeImage } from "./recipe_data.js";
 
 const populateRecipeData = (recipe) => {
   console.debug(recipe);
@@ -71,7 +71,7 @@ const populateRecipeStory = (story) => {
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const recipeId = urlParams.get("id");
+const recipeId = parseInt(urlParams.get("id"));
 if (!recipeId) alert("No recipe ID given!");
 
 document

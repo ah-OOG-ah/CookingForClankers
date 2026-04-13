@@ -4,7 +4,7 @@ import { fetchRecipe, fetchRecipeStory, DATA_PATH } from "./recipe_data.js";
 async function populatePage(favoriteIds) {
   const container = document.getElementById("favoritesContainer");
 
-  if (!favoriteIds || favoriteIds.length == 0) {
+  if (!favoriteIds || favoriteIds.length === 0) {
     container.textContent =
       "You haven't liked any recipes yet! " +
       "Click the heart icon above some recipes " +

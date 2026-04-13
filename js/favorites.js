@@ -44,7 +44,7 @@ export function initFavorites() {
   let favorites = getFavorites();
   document.querySelectorAll(".favorite-btn").forEach((e) => {
     // ensure in correct state
-    const id = e.dataset.recipeId;
+    const id = parseInt(e.dataset.recipeId);
     if (!id) {
       console.warn("Favorite button without an ID!");
       return;

@@ -24,6 +24,33 @@ const RECIPE_FILES = [
 
 const RECIPE_STORIES = "All_recipe_stories.json";
 
+export class Recipe {
+  id; // number
+  name; // string
+  category; // string
+  ingredients; // string[]
+  dietary; // string[]
+  season; // string
+  cuisine; // string
+  prep_time; // string
+  difficulty; // string
+  images; // string[]
+  steps; // string[]
+
+  constructor(obj) {
+    obj && Object.assign(this, obj);
+  }
+}
+
+export class Story {
+  id; // number
+  story; // string
+
+  constructor(obj) {
+    obj && Object.assign(this, obj);
+  }
+}
+
 // TODO memoize this
 export async function fetchRecipe(id) {
   if (id == null) return null;
@@ -47,8 +74,9 @@ ${await response.text()}`,
       return null;
     }
 
-    for (const recipe of json) {
-      if (recipe.id == id) return recipe;
+    for (const obj of json) {
+      const recipe = new Recipe(obj);
+      if (recipe.id === id) return recipe;
     }
   }
   console.error(`Could not find recipe ${id}`);
@@ -76,13 +104,14 @@ ${await response.text()}`,
     return null;
   }
 
-  for (const story of json) {
-    if (story.id == id) return story.story;
+  for (const obj of json) {
+    const story = new Story(obj);
+    if (story.id === id) return story.story;
   }
   console.error(`Could not find story for recipe ${id}`);
   return null;
 }
 
 export function recipeImage(recipe) {
-    return `${DATA_PATH}/images/${recipe.images[recipe.images.length - 1]}`;
+  return `${DATA_PATH}/images/${recipe.images[recipe.images.length - 1]}`;
 }
