@@ -2,7 +2,9 @@
   "dependencies": {
     "bootstrap": "5.3.8",
     "bootstrap-icons": "^1.13.1",
-    "fuse.js": "^7.3.0",
+    "fuse.js": "^7.3.0"
+  },
+  "devDependencies": {
     "prettier": "^3.8.1",
     "sass": "^1.97.3"
   },
