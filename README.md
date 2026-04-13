@@ -137,7 +137,7 @@ Total Points From Standard Requirements = 80
     - Customizable serving size (amounts adjusted).
     - Recipe sharing links
   - Favorites page, locally stored.
-  - Fully static design (pretty sure we can't alter the webserver).
+  - Dynamically fetch recipe JSONs, and convert them to HTML.
 
 - [x] Create a sitemap showing the structure of the website.
 - [x] Develop wireframes for each page, focusing on usability and layout.
@@ -196,12 +196,12 @@ Total Points From Standard Requirements = 80
 - [x] Write JavaScript to filter recipes based on user input.
 - [ ] Highlight the search results and ensure usability.
 
-### 🔴 Task 8: Optional Features (longer task)
+### 🟡 Task 8: Optional Features (longer task)
 
 **Goal**: Complete your Optional Features to identify weak points in your UI
 tests.
 
-- [ ] Optional feature 1
+- [x] Recipe sharing links
 - [ ] Optional feature 2
 - [ ] Optional feature 3
 - [ ] Optional feature 4
@@ -231,6 +231,7 @@ Dominic Antony
 - Sitemap
 - Index page
 - Search page
+- Recipe sharing button
 
 Jonah Ebent
 
