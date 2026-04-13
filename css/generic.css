@@ -20207,6 +20207,7 @@ textarea.form-control-lg {
   overflow: hidden;
   padding-left: 1rem;
   padding-right: 0.5rem;
+  z-index: 10;
 }
 .favorite-btn:hover {
   transform: translateY(-3px);

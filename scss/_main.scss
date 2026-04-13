@@ -14,6 +14,7 @@ $bootstrap-icons-font-dir: "../node_modules/bootstrap-icons/font/fonts";
   overflow: hidden;
   padding-left: 1rem;
   padding-right: 0.5rem;
+  z-index: 10;
 
   &:hover {
     transform: translateY(-3px);
