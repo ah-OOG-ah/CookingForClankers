@@ -113,7 +113,7 @@ export async function fetchAllStories() {
   storiesLoaded = true;
 }
 
-// TODO memoize this
+// TODO use memoized access
 export async function fetchRecipe(id) {
   if (id == null) return null;
   for (const fileName of RECIPE_FILES) {
