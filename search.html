@@ -17,11 +17,16 @@
       crossorigin="anonymous"
       defer
     ></script>
+
+    <script type="module" src="js/search.js"></script>
   </head>
   <body>
     <header-component></header-component>
 
-    <p>Test page, please ignore.</p>
+    <main class="container text-center">
+      <h3>Search results for: <span id="searchSpan"></span></h3>
+      <div class="col" id="mainColumn"></div>
+    </main>
 
     <footer-component></footer-component>
   </body>
