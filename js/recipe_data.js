@@ -44,8 +44,10 @@ export class Recipe {
 }
 
 export class Story {
-  id; // number
-  story; // string
+  /** @type number **/
+  id;
+  /** @type string **/
+  story;
 
   constructor(obj) {
     obj && Object.assign(this, obj);
@@ -81,6 +83,34 @@ export async function fetchAllRecipes() {
   }
 
   recipesLoaded = true;
+}
+
+/** @type {Map<number, string>} **/
+export let ALL_STORIES = new Map();
+let storiesLoaded = false;
+
+export async function fetchAllStories() {
+  if (storiesLoaded) return;
+
+  const storiesPath = `${DATA_PATH}/recipes/${RECIPE_STORIES}`;
+  const response = await fetch(storiesPath);
+  if (!response.ok) {
+    return;
+  }
+
+  const storiesJson = await response.json();
+  if (!Array.isArray(storiesJson)) {
+    console.error(
+      `Stories JSON is not an array! Received:\n${await response.text()}`,
+    );
+    return;
+  }
+
+  for (const obj of storiesJson) {
+    const story = new Story(obj);
+    ALL_STORIES.set(story.id, story.story);
+  }
+  storiesLoaded = true;
 }
 
 // TODO memoize this
@@ -147,32 +177,21 @@ export function recipeImage(recipe) {
   return `${DATA_PATH}/images/${recipe.images[recipe.images.length - 1]}`;
 }
 
+/** @param {string} story **/
 export function storyPreview(story) {
   return `${story.split(".")[0]}.`;
 }
 
-// I like the horizontal layout of this one, but we should use
-// components/recipe-card.js for consistency.
-// TODO integrate the two 😁👍
-// /**
-//  * @param {Recipe} recipe
-//  * @return {HTMLDivElement} A recipe card for the given recipe.
-//  */
-// export function indexCard(recipe) {
-//   let newElem = document.createElement("div");
-//   newElem.className = "card mb-3";
-//   newElem.innerHTML = /* html */ `
-//     <div class="row g-0">
-//       <div class="col-md-4">
-//         <img src="${recipeImage(recipe)}" class="img-fluid rounded-start" alt="...">
-//       </div>
-//       <div class="col-md-8">
-//         <div class="card-body">
-//           <h5 class="card-title">${recipe.name}</h5>
-//           <p class="card-text">This is a sample description, as we don't have a better one generated.</p>
-//           <a href="recipe.html?id=${recipe.id}" class="stretched-link"></a>
-//         </div>
-//       </div>
-//     </div>`;
-//   return newElem;
-// }
+/**
+ * @param {Recipe} recipe
+ * @return {HTMLDivElement} A recipe card for the given recipe.
+ */
+export function indexCard(recipe) {
+  let card = document.createElement("recipe-card");
+  card.className = "col";
+  card.setAttribute("id", recipe.id);
+  card.setAttribute("name", recipe.name);
+  card.setAttribute("img-src", recipeImage(recipe));
+  card.setAttribute("story", storyPreview(ALL_STORIES.get(recipe.id)));
+  return card;
+}
