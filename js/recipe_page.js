@@ -73,7 +73,8 @@ document
   .forEach((element) => (element.dataset.recipeId = recipeId));
 
 initFavorites();
-fetchRecipe(recipeId).then(populateRecipeData);
+const recipe = fetchRecipe(recipeId);
+recipe.then(populateRecipeData);
 fetchRecipeStory(recipeId).then(populateRecipeStory);
 
 const shareBtn = document.getElementById("shareBtn");
@@ -93,6 +94,8 @@ shareBtn.addEventListener("click", copyShareLink);
  **/
 function setIngredients(recipe, multiple) {
   document.querySelectorAll(".recipe-ingredients").forEach((element) => {
+    element.replaceChildren();
+
     for (let ingredient of recipe.ingredients) {
       const [first, ...rest] = ingredient.split(" ");
       const firstNum = parseFloat(first);
@@ -100,7 +103,7 @@ function setIngredients(recipe, multiple) {
         const numString = (firstNum * multiple)
           .toFixed(2)
           .replace(".00", "") // 2.00 -> 2
-          .replace(/0$/, ""); // 2.40 -> 2.4
+          .replace(/(?<=\.[1-9])0$/, ""); // 2.40 -> 2.4
         ingredient = numString + " " + rest.join(" ");
       }
 
@@ -110,3 +113,13 @@ function setIngredients(recipe, multiple) {
     }
   });
 }
+
+/** @type HTMLInputElement **/
+const mulInput = document.getElementById("mulInput");
+mulInput.addEventListener("keydown", async (event) => {
+  if (event.key !== "Enter" || !mulInput.checkValidity()) {
+    return;
+  }
+
+  setIngredients(await recipe, mulInput.valueAsNumber);
+});
