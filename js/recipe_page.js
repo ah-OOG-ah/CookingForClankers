@@ -46,13 +46,7 @@ const populateRecipeData = (recipe) => {
     .querySelectorAll(".recipe-difficulty")
     .forEach((element) => (element.textContent = recipe.difficulty));
 
-  document.querySelectorAll(".recipe-ingredients").forEach((element) => {
-    let ingredients = "";
-    for (const ingredient of recipe.ingredients) {
-      ingredients += `<li>${ingredient}</li>`;
-    }
-    element.innerHTML = ingredients;
-  });
+  setIngredients(recipe, 1);
 
   document.querySelectorAll(".recipe-steps").forEach((element) => {
     let steps = "";
@@ -90,3 +84,29 @@ function copyShareLink() {
   });
 }
 shareBtn.addEventListener("click", copyShareLink);
+
+/**
+ * Loads the .recipe-ingredients list with ingredients, multiplied by the given factor.
+ *
+ * @param {Recipe} recipe
+ * @param {number} multiple
+ **/
+function setIngredients(recipe, multiple) {
+  document.querySelectorAll(".recipe-ingredients").forEach((element) => {
+    for (let ingredient of recipe.ingredients) {
+      const [first, ...rest] = ingredient.split(" ");
+      const firstNum = parseFloat(first);
+      if (!Number.isNaN(firstNum)) {
+        const numString = (firstNum * multiple)
+          .toFixed(2)
+          .replace(".00", "") // 2.00 -> 2
+          .replace(/0$/, ""); // 2.40 -> 2.4
+        ingredient = numString + " " + rest.join(" ");
+      }
+
+      const liNode = document.createElement("li");
+      liNode.innerText = ingredient;
+      element.appendChild(liNode);
+    }
+  });
+}

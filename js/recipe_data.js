@@ -28,7 +28,8 @@ export class Recipe {
   id; // number
   name; // string
   category; // string
-  ingredients; // string[]
+  /** @type {string[]} **/
+  ingredients;
   dietary; // string[]
   season; // string
   cuisine; // string
