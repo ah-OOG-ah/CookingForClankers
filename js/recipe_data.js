@@ -59,8 +59,7 @@ export async function fetchRecipe(id) {
     const response = await fetch(path);
     if (!response.ok) {
       console.warn(
-        `Fetch to ${path} failed! ${response.status}
-${await response.text()}`,
+        `Fetch to ${path} failed! ${response.status}\n${await response.text()}`,
       );
       return null;
     }
