@@ -151,7 +151,7 @@ Total Points From Standard Requirements = 80
       recipe detail page.
   - [x] Homepage.
   - [x] Individual pages for recipes. (One sample done)
-  - [x] Index page.
+  - [x] Index page. _DA_
 - [x] Add semantic tags for navigation, content, and footer.
 - [x] Link placeholder content to reflect the wireframe design.
 
@@ -186,14 +186,14 @@ Total Points From Standard Requirements = 80
 
 - [x] Use a sample JSON file or JavaScript object to store recipe data.
 - [ ] Write JavaScript to dynamically populate recipe cards on the homepage.
-- [x] Implement a "Load More" button for paginated recipe listings.
+- [x] Implement a "Load More" button for paginated recipe listings. _DA_
 
 ### 🟡 Task 7: Search Functionality
 
 **Goal**: Enable users to search for recipes.
 
-- [x] Add a search bar to the website.
-- [x] Write JavaScript to filter recipes based on user input.
+- [x] Add a search bar to the website. _DA_
+- [x] Write JavaScript to filter recipes based on user input. _DA_
 - [ ] Highlight the search results and ensure usability.
 
 ### 🟡 Task 8: Optional Features (longer task)
@@ -201,8 +201,8 @@ Total Points From Standard Requirements = 80
 **Goal**: Complete your Optional Features to identify weak points in your UI
 tests.
 
-- [x] Recipe sharing links
-- [ ] Optional feature 2
+- [x] Recipe sharing links _DA_
+- [x] Ingredient multiplication _DA_
 - [ ] Optional feature 3
 - [ ] Optional feature 4
 - [ ] ...
