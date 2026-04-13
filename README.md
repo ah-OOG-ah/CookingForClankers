@@ -47,8 +47,8 @@ scp -r <user>@csc391-vm1.eng.franciscan.edu:/srv/csc391support/files/for-realsie
 - [ ] [Tasks](#tasks) 0-7 completed
   - [x] [Task 2](#-task-2-setting-up-the-basic-html-structure)
   - [x] [Task 3](#-task-3-styling-the-site-with-css)
-  - [ ] [Task 4](#-task-4-recipe-details-page)
-  - [ ] [Task 5](#-task-5-improving-user-interface-with-animation)
+  - [x] [Task 4](#-task-4-recipe-details-page)
+  - [x] [Task 5](#-task-5-improving-user-interface-with-animation)
   - [ ] [Task 6](#-task-6-adding-javascript-for-dynamic-recipe-listings)
   - [ ] [Task 7](#-task-7-search-functionality)
 - [ ] Optional Features List
@@ -143,7 +143,7 @@ Total Points From Standard Requirements = 80
 - [x] Develop wireframes for each page, focusing on usability and layout.
 - [x] Create a timeline of tasks, including any content development (see above)
 
-### 🟡 Task 2: Setting Up the Basic HTML Structure
+### 🟢 Task 2: Setting Up the Basic HTML Structure
 
 **Goal**: Build the foundational structure of the site.
 
@@ -172,7 +172,7 @@ Total Points From Standard Requirements = 80
 - [x] Populate the detail page with data (e.g., ingredients, steps, and images).
 - [x] Add a "Back to Homepage" button for navigation.
 
-### 🔴 Task 5: Improving User Interface with Animation
+### 🟢 Task 5: Improving User Interface with Animation
 
 **Goal**: Add smooth transitions and interactivity.
 
@@ -186,9 +186,9 @@ Total Points From Standard Requirements = 80
 
 - [x] Use a sample JSON file or JavaScript object to store recipe data.
 - [ ] Write JavaScript to dynamically populate recipe cards on the homepage.
-- [ ] Implement a "Load More" button for paginated recipe listings.
+- [x] Implement a "Load More" button for paginated recipe listings.
 
-### 🔴 Task 7: Search Functionality
+### 🟡 Task 7: Search Functionality
 
 **Goal**: Enable users to search for recipes.
 
