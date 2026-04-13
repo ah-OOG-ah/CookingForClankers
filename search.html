@@ -21,6 +21,7 @@
     <script type="module" src="js/search.js"></script>
   </head>
   <body>
+    <a id="top"></a>
     <header-component></header-component>
 
     <main class="container text-center">
@@ -30,6 +31,15 @@
         <span id="totalCount"></span> results found.
       </p>
       <div class="col" id="mainColumn"></div>
+
+      <div class="row">
+        <div id="loadMoreCol" class="col">
+          <button id="loadMore" class="btn btn-outline-light">Load More</button>
+        </div>
+        <div class="col">
+          <a href="#top" class="btn btn-outline-light">Back to Top</a>
+        </div>
+      </div>
     </main>
 
     <footer-component></footer-component>

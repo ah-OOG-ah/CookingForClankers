@@ -7,14 +7,29 @@ const urlParams = new URLSearchParams(window.location.search);
 const searchString = urlParams.get("query");
 document.getElementById("searchSpan").innerText = searchString;
 
+/** @type {Fuse<Recipe>} **/
 const fuse = new Fuse(ALL_RECIPES.values().toArray(), { keys: ["name"] });
+// noinspection JSValidateTypes The proper types are sadly only visible with Typescript.
+/** @type {FuseResult<Recipe>[]} **/
 const results = fuse.search(searchString);
 
 const total = results.length;
-let shown = Math.min(5, total);
-document.getElementById("totalCount").innerText = total.toString();
-document.getElementById("shownCount").innerText = shown.toString();
+let shown = 0;
 
-for (const match of results.slice(0, shown)) {
-  document.getElementById("mainColumn").appendChild(indexCard(match.item));
+function updateResults() {
+  shown = Math.min(shown + 5, total);
+  document.getElementById("totalCount").innerText = total.toString();
+  document.getElementById("shownCount").innerText = shown.toString();
+
+  const mainCol = document.getElementById("mainColumn");
+  mainCol.replaceChildren(
+    ...results.slice(0, shown).map((result) => indexCard(result.item)),
+  );
+
+  if (shown >= total) {
+    document.getElementById("loadMoreCol").className += " d-none";
+  }
 }
+
+updateResults();
+document.getElementById("loadMore").addEventListener("click", updateResults);
