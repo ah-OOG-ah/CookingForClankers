@@ -30,6 +30,7 @@ class Header extends HTMLElement {
                 aria-label="Search"
                 name="query"
                 id="query"
+                required
               />
             </label>
             <button class="btn btn-outline-success" type="submit">
