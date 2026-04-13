@@ -1,5 +1,10 @@
 import { initFavorites } from "./favorites.js";
-import {ALL_RECIPES, fetchAllRecipes, fetchAllStories, indexCard} from "./recipe_data.js";
+import {
+  ALL_RECIPES,
+  fetchAllRecipes,
+  fetchAllStories,
+  indexCard,
+} from "./recipe_data.js";
 
 await fetchAllRecipes();
 await fetchAllStories();
