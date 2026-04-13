@@ -51,6 +51,37 @@ export class Story {
   }
 }
 
+/** @type {Map<number, Recipe>} **/
+export let ALL_RECIPES = new Map();
+let recipesLoaded = false;
+
+export async function fetchAllRecipes() {
+  if (recipesLoaded) return;
+
+  for (const file of RECIPE_FILES) {
+    const path = `${DATA_PATH}/recipes/${file}`;
+    const response = await fetch(path);
+    if (!response.ok) {
+      continue;
+    }
+
+    const json = await response.json();
+    if (!Array.isArray(json)) {
+      console.log(
+        `Recipe file ${path} did not contain a recipe array! Instead, it had:\n${json}`,
+      );
+      continue;
+    }
+
+    for (const obj of json) {
+      const recipe = new Recipe(obj);
+      ALL_RECIPES.set(recipe.id, recipe);
+    }
+  }
+
+  recipesLoaded = true;
+}
+
 // TODO memoize this
 export async function fetchRecipe(id) {
   if (id == null) return null;
