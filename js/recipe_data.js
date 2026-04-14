@@ -2,6 +2,7 @@
 // from the server
 
 export const DATA_PATH = "/data";
+// Do not change this line in the slightest! It gets replaced by the deploy script.
 
 const RECIPE_FILES = [
   "appetizer_recipes.json",
