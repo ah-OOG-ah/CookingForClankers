@@ -19,6 +19,12 @@ CfC has or will have:
 - Favorites page, locally stored.
 - Fully static design (pretty sure we can't alter the webserver).
 
+To get sample data, run the following command:
+
+```bash
+scp -r <user>@csc391-vm1.eng.franciscan.edu:/srv/csc391support/files/for-realsies ./data
+```
+
 ## TODO
 
 - Investigate backend capabilities. Some of the listed features would be trivial
@@ -38,7 +44,13 @@ CfC has or will have:
 ### Milestone 2 - Supervisor Update
 
 - [ ] By now, all the [Required Features](#required-features) must be functional
-- [ ] Tasks 0-7 completed
+- [ ] [Tasks](#tasks) 0-7 completed
+  - [x] [Task 2](#-task-2-setting-up-the-basic-html-structure)
+  - [x] [Task 3](#-task-3-styling-the-site-with-css)
+  - [x] [Task 4](#-task-4-recipe-details-page)
+  - [x] [Task 5](#-task-5-improving-user-interface-with-animation)
+  - [ ] [Task 6](#-task-6-adding-javascript-for-dynamic-recipe-listings)
+  - [ ] [Task 7](#-task-7-search-functionality)
 - [ ] Optional Features List
 - [ ] Some optional features started
 
@@ -58,13 +70,14 @@ CfC has or will have:
 ## Required Features
 
 - [x] **Homepage**: Includes a welcome message and featured recipe. (10 Points)
-- [ ] **Recipe Cards**: Interactive recipe cards with thumbnails, descriptions,
-      and like buttons. (15 Points)
+      _DA_
+- [x] **Recipe Cards**: Interactive recipe cards with thumbnails, descriptions,
+      and like buttons. (15 Points) _JE_
 - [ ] **Search Functionality**: Real-time search for recipes by name.(10 Points)
-- [ ] **Recipe Detail Pages**: Each page displays ingredients, instructions, and
-      additional details for the corresponding recipe. (15 Points)
-- [ ] **Favorites Page**: A dedicated page for saved recipes using persistent
-      local storage. (10 Points)
+- [x] **Recipe Detail Pages**: Each page displays ingredients, instructions, and
+      additional details for the corresponding recipe. (15 Points) _JE_
+- [x] **Favorites Page**: A dedicated page for saved recipes using persistent
+      local storage. (10 Points) _JE_
 - [ ] **Visual Design** Appealing, functional, no seizure-induction elements.
       Consistent color schemes, typography, and smooth animations. Wayfinding
       elements throughout the website. (20 Points)
@@ -124,7 +137,7 @@ Total Points From Standard Requirements = 80
     - Customizable serving size (amounts adjusted).
     - Recipe sharing links
   - Favorites page, locally stored.
-  - Fully static design (pretty sure we can't alter the webserver).
+  - Dynamically fetch recipe JSONs, and convert them to HTML.
 
 - [x] Create a sitemap showing the structure of the website.
 - [x] Develop wireframes for each page, focusing on usability and layout.
@@ -136,6 +149,9 @@ Total Points From Standard Requirements = 80
 
 - [x] Create an HTML file with sections for a homepage, recipe listings, and a
       recipe detail page.
+  - [x] Homepage.
+  - [x] Individual pages for recipes. (One sample done)
+  - [x] Index page. _DA_
 - [x] Add semantic tags for navigation, content, and footer.
 - [x] Link placeholder content to reflect the wireframe design.
 
@@ -148,45 +164,45 @@ Total Points From Standard Requirements = 80
   - _handled by Bootstrap_
 - [x] Implement a color scheme and typography consistent with the wireframe.
 
-### 🟡 Task 4: Recipe Details Page
+### 🟢 Task 4: Recipe Details Page
 
 **Goal**: Create individual examples of recipe pages with detailed information.
 
-- [ ] Link recipe cards to individual recipe detail pages.
-- [ ] Populate the detail page with data (e.g., ingredients, steps, and images).
-- [ ] Add a "Back to Homepage" button for navigation.
+- [x] Link recipe cards to individual recipe detail pages. _JE_
+- [x] Populate the detail page with data (e.g., ingredients, steps, and images). _JE_
+- [x] Add a "Back to Homepage" button for navigation. _JE_
 
-### 🔴 Task 5: Improving User Interface with Animation
+### 🟢 Task 5: Improving User Interface with Animation
 
 **Goal**: Add smooth transitions and interactivity.
 
-- [ ] Use CSS animations for hover effects on buttons and recipe cards.
-- [ ] Implement smooth scrolling for navigation.
-- [ ] Add feedback animations for buttons (e.g., a "Favorite" button toggle).
+- [x] Use CSS animations for hover effects on buttons and recipe cards. _AJ_
+- [x] Implement smooth scrolling for navigation. _AJ_
+- [x] Add feedback animations for buttons (e.g., a "Favorite" button toggle). _AJ_
 
-### 🔴 Task 6: Adding JavaScript for Dynamic Recipe Listings
+### 🟡 Task 6: Adding JavaScript for Dynamic Recipe Listings
 
 **Goal**: Display recipe data dynamically using JavaScript.
 
-- [ ] Use a sample JSON file or JavaScript object to store recipe data.
+- [x] Use a sample JSON file or JavaScript object to store recipe data.
 - [ ] Write JavaScript to dynamically populate recipe cards on the homepage.
-- [ ] Implement a "Load More" button for paginated recipe listings.
+- [x] Implement a "Load More" button for paginated recipe listings. _DA_
 
-### 🔴 Task 7: Search Functionality
+### 🟡 Task 7: Search Functionality
 
 **Goal**: Enable users to search for recipes.
 
-- [ ] Add a search bar to the website.
-- [ ] Write JavaScript to filter recipes based on user input.
+- [x] Add a search bar to the website. _DA_
+- [x] Write JavaScript to filter recipes based on user input. _DA_
 - [ ] Highlight the search results and ensure usability.
 
-### 🔴 Task 8: Optional Features (longer task)
+### 🟡 Task 8: Optional Features (longer task)
 
 **Goal**: Complete your Optional Features to identify weak points in your UI
 tests.
 
-- [ ] Optional feature 1
-- [ ] Optional feature 2
+- [x] Recipe sharing links _DA_
+- [x] Ingredient multiplication _DA_
 - [ ] Optional feature 3
 - [ ] Optional feature 4
 - [ ] ...
@@ -213,18 +229,25 @@ Dominic Antony
 - Main page structure and carousel
 - Wireframes
 - Sitemap
+- Index page
+- Search page
+- Recipe sharing button
 
 Jonah Ebent
 
 - Logos (w/ Gemini)
-- Recipe card page
+- Recipe detail page
 - Presentation updates
 - Home page tweaks
 - Project organization
+- Favorites page & functionality
+- Header/footer
 
 Adrian Johnson
 
 - Presentation 1
+- animations for buttons and cards
+- added event listener to make cards clickable.
 
 SFE128 data set/old CSC391 dataset, for recipe image sources.
 

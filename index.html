@@ -1,62 +1,25 @@
 <!doctype html>
 <html lang="en" data-bs-theme="dark">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+      charset="UTF-8"
+    />
     <title>Cooking for Clankers</title>
 
     <link rel="stylesheet" href="css/index.css" />
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+      defer
+    ></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-sm">
-      <div class="container-fluid">
-        <div class="navbar-brand">
-          <a href="index.html">
-            <!--suppress CheckImageSize -->
-            <img
-              src="imgs/icon-logo.png"
-              alt="Cooking for Clankers Logo"
-              height="64"
-            />
-          </a>
-        </div>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <form class="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search recipes..."
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              SEARCH
-            </button>
-          </form>
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">HOME</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="404.html">INDEX</a>
-            </li>
-          </ul>
-        </div>
-
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-    </nav>
-
-    <hr />
+    <header-component active-page="HOME"></header-component>
 
     <div id="recipeCarousel" class="carousel slide">
       <div class="carousel-indicators">
@@ -83,16 +46,16 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <a href="sample-recipe.html">
+          <a href="recipe.html?id=73">
             <img
-              src="imgs/recipe_imgs/apple_crisp.webp"
+              src="data/images/apple_crisp_4.webp"
               class="d-block"
-              alt="Crispy Apple Crisps"
+              alt="Apple Crisp"
             />
             <div
               class="carousel-caption d-none d-sm-block text-secondary-emphasis"
             >
-              <h5>Crispy Apple Crisps</h5>
+              <h5>Apple Crisp</h5>
               <p class="d-none d-md-block">
                 Very very very very very very very very very very very crispy
               </p>
@@ -100,34 +63,38 @@
           </a>
         </div>
         <div class="carousel-item">
-          <img
-            src="imgs/recipe_imgs/bruschetta.webp"
-            class="d-block"
-            alt="Bruschetta with Tomatoes"
-          />
-          <div
-            class="carousel-caption d-none d-sm-block text-secondary-emphasis"
-          >
-            <h5>Bruschetta with Tomatoes</h5>
-            <p class="d-none d-md-block">
-              Tomatoes aren't disgusting. Even if they taste like water.
-            </p>
-          </div>
+          <a href="recipe.html?id=76">
+            <img
+              src="data/images/bruschetta_with_tomato_and_basil_4.webp"
+              class="d-block"
+              alt="Bruschetta with Tomato and Basil"
+            />
+            <div
+              class="carousel-caption d-none d-sm-block text-secondary-emphasis"
+            >
+              <h5>Bruschetta with Tomato and Basil</h5>
+              <p class="d-none d-md-block">
+                Tomatoes aren't disgusting. Even if they taste like water.
+              </p>
+            </div>
+          </a>
         </div>
         <div class="carousel-item">
-          <img
-            src="imgs/recipe_imgs/brussel_sprout.webp"
-            class="d-block"
-            alt="Salted Brussels Sprouts"
-          />
-          <div
-            class="carousel-caption d-none d-sm-block text-secondary-emphasis"
-          >
-            <h5>Salted Brussels Sprouts</h5>
-            <p class="d-none d-md-block">
-              Oddly enough, these were made nowhere near Brussels.
-            </p>
-          </div>
+          <a href="recipe.html?id=72">
+            <img
+              src="data/images/maple_roasted_brussels_sprouts_6.webp"
+              class="d-block"
+              alt="Maple Roasted Brussels Sprouts"
+            />
+            <div
+              class="carousel-caption d-none d-sm-block text-secondary-emphasis"
+            >
+              <h5>Maple Roasted Brussels Sprouts</h5>
+              <p class="d-none d-md-block">
+                Oddly enough, these were made nowhere near Brussels.
+              </p>
+            </div>
+          </a>
         </div>
       </div>
       <button
@@ -267,22 +234,6 @@
       </div>
     </main>
 
-    <footer>
-      <hr />
-      <p>Blah blah blah boring legal</p>
-      <p>Check out our <a href="https://github.com/ah-OOG-ah/CookingForClankers">GitHub</a></p>
-      <!--suppress CheckImageSize -->
-      <img
-        src="imgs/logo.png"
-        alt="Cooking for Clankers: Recipes by Robots, for Robots"
-        height="128"
-      />
-    </footer>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
+    <footer-component></footer-component>
   </body>
 </html>
