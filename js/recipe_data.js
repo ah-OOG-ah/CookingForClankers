@@ -35,7 +35,8 @@ export class Recipe {
   cuisine; // string
   prep_time; // string
   difficulty; // string
-  images; // string[]
+  /** @type {string[]} **/
+  images;
   steps; // string[]
 
   constructor(obj) {
