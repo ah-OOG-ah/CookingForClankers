@@ -32,10 +32,10 @@ class RecipeCard extends HTMLElement {
     this.innerHTML = /* html */ `
         <article class="card">
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-lg-4">
               <img src=${imgSrc} class="card-img rounded" alt="..."/>
             </div>
-            <div class="col-md-8">
+            <div class="col-lg-8">
               <div class="card-body">
                 <div class="d-flex justify-content-between mb-2">
                   <div>
@@ -48,7 +48,6 @@ class RecipeCard extends HTMLElement {
                 <div class="d-flex flex-wrap gap-2">
                   ${dietary
                     .map((d) => {
-                      // TODO color accordingly
                       return /* html */ `<span class="dietary-chip ${d}">${d}</span>`;
                     })
                     .join("\n")}
