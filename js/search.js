@@ -1,4 +1,9 @@
-import { ALL_RECIPES, fetchAllRecipes, recipeImage } from "./recipe_data.js";
+import {
+  ALL_RECIPES,
+  fetchAllRecipes,
+  fetchAllStories,
+  indexCard,
+} from "./recipe_data.js";
 import Fuse from "../node_modules/fuse.js/dist/fuse.min.mjs";
 import { initFavorites } from "./favorites.js";
 
@@ -26,13 +31,7 @@ function updateResults() {
   mainCol.replaceChildren(
     ...results.slice(0, shown).map((result) => {
       const recipe = result.item;
-      const card = document.createElement("recipe-card");
-      card.className = "col";
-      card.setAttribute("id", recipe.id);
-      card.setAttribute("name", recipe.name);
-      card.setAttribute("img-src", recipeImage(recipe));
-      // TODO add recipe story
-      // card.setAttribute("story", storyPreview(fetchRecipeStory(recipe.id)));
+      const card = indexCard(recipe);
       return card;
     }),
   );
@@ -43,5 +42,6 @@ function updateResults() {
   initFavorites();
 }
 
+await fetchAllStories();
 updateResults();
 document.getElementById("loadMore").addEventListener("click", updateResults);

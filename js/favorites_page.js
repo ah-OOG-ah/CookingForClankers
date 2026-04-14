@@ -1,12 +1,5 @@
 import { getFavorites, initFavorites } from "./favorites.js";
-import {
-  fetchRecipe,
-  fetchRecipeStory,
-  storyPreview,
-  recipeImage,
-  indexCard,
-  fetchAllStories,
-} from "./recipe_data.js";
+import { fetchRecipe, indexCard, fetchAllStories } from "./recipe_data.js";
 
 async function populatePage(favoriteIds) {
   const container = document.getElementById("favoritesContainer");
