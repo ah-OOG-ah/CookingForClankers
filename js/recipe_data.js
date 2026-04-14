@@ -189,9 +189,14 @@ export function storyPreview(story) {
 export function indexCard(recipe) {
   let card = document.createElement("recipe-card");
   card.className = "col";
+  card.setAttribute("img-src", recipeImage(recipe));
   card.setAttribute("id", recipe.id);
   card.setAttribute("name", recipe.name);
-  card.setAttribute("img-src", recipeImage(recipe));
-  card.setAttribute("story", storyPreview(ALL_STORIES.get(recipe.id)));
+  card.setAttribute("cuisine", recipe.cuisine);
+  card.setAttribute("difficulty", recipe.difficulty);
+  card.setAttribute("prep-time", recipe.prep_time);
+  card.setAttribute("story", storyPreview(ALL_STORIES.get(recipe.id) || ""));
+  card.setAttribute("dietary", (recipe.dietary || []).join(","));
+  card.setAttribute("season", recipe.season);
   return card;
 }

@@ -20205,8 +20205,7 @@ textarea.form-control-lg {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  padding-left: 1rem;
-  padding-right: 0.5rem;
+  padding: 0.5rem;
   z-index: 10;
 }
 .favorite-btn:hover {
@@ -20259,6 +20258,44 @@ recipe-card .card img {
 }
 recipe-card .card:hover .recipe-img-final, recipe-card .card:hover img {
   transform: scale(1.08);
+}
+
+.dietary-chip {
+  border-radius: 99999px;
+  padding: 0.25em 0.5em;
+  font-size: small;
+}
+.dietary-chip.Vegetarian {
+  border: 1px solid #00AB4D;
+  background-color: rgba(0, 171, 77, 0.062745098);
+}
+.dietary-chip.Gluten-Free {
+  border: 1px solid #DBA800;
+  background-color: rgba(219, 168, 0, 0.062745098);
+}
+.dietary-chip.Vegan {
+  border: 1px solid #72CF00;
+  background-color: rgba(114, 207, 0, 0.062745098);
+}
+.dietary-chip.High-Protein {
+  border: 1px solid #C30000;
+  background-color: rgba(195, 0, 0, 0.062745098);
+}
+
+.bi-flower2 {
+  color: #7CE100;
+}
+
+.bi-sun-fill {
+  color: #FFEA00;
+}
+
+.bi-leaf-fill {
+  color: #FF8800;
+}
+
+.bi-snow {
+  color: #00EEFF;
 }
 
 html {

@@ -12,8 +12,7 @@ $bootstrap-icons-font-dir: "../node_modules/bootstrap-icons/font/fonts";
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  padding-left: 1rem;
-  padding-right: 0.5rem;
+  padding: 0.5rem;
   z-index: 10;
 
   &:hover {
@@ -77,6 +76,48 @@ recipe-card .card {
   &:hover img {
     transform: scale(1.08);
   }
+}
+
+.dietary-chip {
+  border-radius: 99999px;
+  padding: 0.25em 0.5em;
+  font-size: small;
+
+  &.Vegetarian {
+    border: 1px solid #00AB4D;
+    background-color: #00AB4D10;
+  }
+
+  &.Gluten-Free {
+    border: 1px solid #DBA800;
+    background-color: #DBA80010;
+  }
+
+  &.Vegan {
+    border: 1px solid #72CF00;
+    background-color: #72CF0010;
+  }
+
+  &.High-Protein {
+    border: 1px solid #C30000;
+    background-color: #C3000010;
+  }
+}
+
+.bi-flower2 {
+  color: #7CE100;
+}
+
+.bi-sun-fill {
+  color: #FFEA00;
+}
+
+.bi-leaf-fill {
+  color: #FF8800;
+}
+
+.bi-snow {
+  color: #00EEFF;
 }
 
 html {
