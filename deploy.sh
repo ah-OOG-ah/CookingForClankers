@@ -16,3 +16,4 @@ rsync --recursive \
  --chmod=Dug=rwx,Do=rx,Fug=rw,Fo=r \
  --chown=:csc391team3 \
  -- components css imgs js *.html README.md node_modules data "$remote":$projectDir
+sed -i "s|export const DATA_PATH = \"/team3/project/data\";|export const DATA_PATH = \"/data\";|" ./js/recipe_data.js
