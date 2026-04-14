@@ -1,8 +1,8 @@
 // recipe_data.js: responsible for providing operations to fetch recipe data
 // from the server
 
-export const DATA_PATH = "/data";
 // Do not change this line in the slightest! It gets replaced by the deploy script.
+export const DATA_PATH = "/data";
 
 const RECIPE_FILES = [
   "appetizer_recipes.json",
