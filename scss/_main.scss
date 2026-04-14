@@ -3,6 +3,10 @@
 $bootstrap-icons-font-dir: "../node_modules/bootstrap-icons/font/fonts";
 @import "../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
 
+* {
+  box-sizing: border-box;
+}
+
 .favorite-btn {
   color: red;
   font-size: 1.2rem;

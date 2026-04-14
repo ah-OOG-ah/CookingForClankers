@@ -20196,6 +20196,10 @@ textarea.form-control-lg {
   content: "爛";
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .favorite-btn {
   color: red;
   font-size: 1.2rem;

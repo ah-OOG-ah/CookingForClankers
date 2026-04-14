@@ -32,11 +32,11 @@ class RecipeCard extends HTMLElement {
     this.innerHTML = /* html */ `
         <article class="card">
           <div class="row">
-            <div class="col-lg-4">
-              <img src=${imgSrc} class="card-img rounded" alt="..."/>
+            <div class="col-lg-4 px-0">
+              <img src=${imgSrc} class="card-img rounded w-100 h-100 object-fit-cover" alt="..."/>
             </div>
-            <div class="col-lg-8">
-              <div class="card-body">
+            <div class="col-lg-8 px-0">
+              <div class="card-body px-3">
                 <div class="d-flex justify-content-between mb-2">
                   <div>
                     <h5 class="card-title">${name}</h5>
@@ -52,7 +52,7 @@ class RecipeCard extends HTMLElement {
                     })
                     .join("\n")}
                 </div>
-                <i class="bi ${seasonIcon} position-absolute bottom-0 end-0 mx-4 mb-3"></i>
+                <i class="bi ${seasonIcon} position-absolute bottom-0 end-0 mx-2 mb-2"></i>
                 <a href="recipe.html?id=${id}" class="stretched-link"></a>
               </div>
             </div>
