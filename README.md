@@ -86,6 +86,17 @@ Total Points From Standard Requirements = 80
 
 ## Optional Features
 
+- [x] Recipe sharing links _DA_
+- [x] Ingredient multiplication _DA_
+- [] Advanced dynamic search
+- [] Theme switcher
+- [] Recipe submission form
+- [] Cooking timer
+- [] User ratings and reviews
+- [] Dynamic recipe filter and sorting
+- [] Animations for recipe actions (partially done!)
+- [] Recipe of the day feature
+
 ## Tasks
 
 ### 🟢 Task 0: System Requirements & Schedule
@@ -203,9 +214,14 @@ tests.
 
 - [x] Recipe sharing links _DA_
 - [x] Ingredient multiplication _DA_
-- [ ] Optional feature 3
-- [ ] Optional feature 4
-- [ ] ...
+- [] Advanced dynamic search
+- [] Theme switcher
+- [] Recipe submission form
+- [] Cooking timer
+- [] User ratings and reviews
+- [] Dynamic recipe filter and sorting
+- [] Animations for recipe actions (partially done!)
+- [] Recipe of the day feature
 
 ### 🔴 Task 9: Usability Testing
 
