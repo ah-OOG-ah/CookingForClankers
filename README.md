@@ -221,7 +221,7 @@ tests.
 - [] User ratings and reviews
 - [] Dynamic recipe filter and sorting
 - [] Animations for recipe actions (partially done!)
-- [] Recipe of the day feature
+- [x] Recipe of the day feature _JE_
 
 ### 🔴 Task 9: Usability Testing
 
