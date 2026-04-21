@@ -16,7 +16,11 @@ const searchInput = document.getElementById("searchSpan");
 searchInput.value = searchString;
 
 /** @type {Fuse<Recipe>} **/
-const fuse = new Fuse(ALL_RECIPES.values().toArray(), { keys: ["name"] });
+const fuse = new Fuse(ALL_RECIPES.values().toArray(), {
+    keys: ["name"],
+    threshold: 0.4,
+    useTokenSearch: true
+});
 // noinspection JSValidateTypes The proper types are sadly only visible with Typescript.
 /** @type {FuseResult<Recipe>[]} **/
 let results = fuse.search(searchString);
