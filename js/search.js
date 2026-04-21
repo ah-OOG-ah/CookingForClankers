@@ -22,8 +22,11 @@ const results = fuse.search(searchString);
 const total = results.length;
 let shown = 0;
 
-function updateResults() {
-  shown = Math.min(shown + 5, total);
+function loadMore() {
+    shown = Math.min(shown + 5, total);
+}
+
+function updatePage() {
   document.getElementById("totalCount").innerText = total.toString();
   document.getElementById("shownCount").innerText = shown.toString();
 
@@ -43,5 +46,10 @@ function updateResults() {
 }
 
 await fetchAllStories();
-updateResults();
-document.getElementById("loadMore").addEventListener("click", updateResults);
+loadMore();
+updatePage();
+document.getElementById("loadMore").addEventListener("click", () => {
+    loadMore();
+    updatePage();
+});
+
