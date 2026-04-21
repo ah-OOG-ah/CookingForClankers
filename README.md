@@ -215,7 +215,7 @@ tests.
 - [x] Recipe sharing links _DA_
 - [x] Ingredient multiplication _DA_
 - [] Advanced dynamic search
-- [] Theme switcher
+- [x] Theme switcher _JE_
 - [] Recipe submission form
 - [] Cooking timer
 - [] User ratings and reviews

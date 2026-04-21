@@ -20288,22 +20288,6 @@ recipe-card .card:hover .recipe-img-final, recipe-card .card:hover img {
   background-color: rgba(195, 0, 0, 0.062745098);
 }
 
-.bi-flower2 {
-  color: #7ce100;
-}
-
-.bi-sun-fill {
-  color: #ffea00;
-}
-
-.bi-leaf-fill {
-  color: #ff8800;
-}
-
-.bi-snow {
-  color: #00eeff;
-}
-
 html {
   scroll-behavior: smooth;
   height: 100%;
