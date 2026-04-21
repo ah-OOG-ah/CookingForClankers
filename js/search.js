@@ -1,11 +1,6 @@
-import {
-  ALL_RECIPES,
-  fetchAllRecipes,
-  fetchAllStories,
-  indexCard,
-} from "./recipe_data.js";
+import {ALL_RECIPES, fetchAllRecipes, fetchAllStories, indexCard,} from "./recipe_data.js";
 import Fuse from "../node_modules/fuse.js/dist/fuse.min.mjs";
-import { initFavorites } from "./favorites.js";
+import {initFavorites} from "./favorites.js";
 
 await fetchAllRecipes();
 
@@ -34,8 +29,7 @@ function updatePage() {
   mainCol.replaceChildren(
     ...results.slice(0, shown).map((result) => {
       const recipe = result.item;
-      const card = indexCard(recipe);
-      return card;
+      return indexCard(recipe);
     }),
   );
 
