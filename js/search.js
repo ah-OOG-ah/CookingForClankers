@@ -80,7 +80,11 @@ filterForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const formData = new FormData(filterForm);
+  const filters = [];
+
   const season = formData.get("season");
-  if (season === "Any") updateResults();
-  else updateResults((r) => r.season === season);
+  if (season !== "Any") filters.push((r) => r.season === season);
+  const category = formData.get("category");
+  if (category !== "Any") filters.push((r) => r.category === category);
+  updateResults(...filters);
 });
