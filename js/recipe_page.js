@@ -28,7 +28,7 @@ const populateRecipeData = (recipe) => {
       ${recipe.images
         .map(
           (src, i) => /* html */ `
-          <div class="carousel-item ${i === 0 ? "active" : ""}" style="max-height: 600px;">
+          <div class="carousel-item ${i === 0 ? "active" : ""} recipe-detail-carousel-img">
             <img src="${imageSrc(src)}" class="d-block w-100 h-100 object-fit-cover" alt="...">
           </div>`,
         )
