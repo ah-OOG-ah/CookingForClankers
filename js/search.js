@@ -1,6 +1,11 @@
-import {ALL_RECIPES, fetchAllRecipes, fetchAllStories, indexCard,} from "./recipe_data.js";
+import {
+  ALL_RECIPES,
+  fetchAllRecipes,
+  fetchAllStories,
+  indexCard,
+} from "./recipe_data.js";
 import Fuse from "../node_modules/fuse.js/dist/fuse.min.mjs";
-import {initFavorites} from "./favorites.js";
+import { initFavorites } from "./favorites.js";
 
 await fetchAllRecipes();
 
@@ -18,7 +23,7 @@ const total = results.length;
 let shown = 0;
 
 function loadMore() {
-    shown = Math.min(shown + 5, total);
+  shown = Math.min(shown + 5, total);
 }
 
 function updatePage() {
@@ -43,7 +48,7 @@ await fetchAllStories();
 loadMore();
 updatePage();
 document.getElementById("loadMore").addEventListener("click", () => {
-    loadMore();
-    updatePage();
+  loadMore();
+  updatePage();
 });
 
