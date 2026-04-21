@@ -94,7 +94,7 @@ document.getElementById("loadMore").addEventListener("click", () => {
   updatePage();
 });
 
-filterForm.addEventListener("submit", (event) => {
+filterForm.addEventListener("input", (event) => {
   event.preventDefault();
   updateResults();
 });
