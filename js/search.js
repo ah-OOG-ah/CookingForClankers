@@ -28,10 +28,14 @@ function updateResults(...filters) {
   for (const filter of filters) {
     results = results.filter((r) => filter(r.item));
   }
-  total = results.length;
-  // Try to display at *least* five, but at *most* whatever we had before OR the most we can show.
-  shown = Math.min(Math.max(shown, 5), total);
+  updateCount()
   updatePage();
+}
+
+function updateCount() {
+    total = results.length;
+    // Try to display at *least* five, but at *most* whatever we had before OR the most we can show.
+    shown = Math.min(Math.max(shown, 5), total);
 }
 
 function loadMore() {
@@ -50,10 +54,17 @@ function updatePage() {
     }),
   );
 
-  if (shown >= total) {
-    document.getElementById("loadMoreCol").className += " d-none";
-  }
+  updateLoadMoreBtn();
   initFavorites();
+}
+
+const loadMoreCol = document.getElementById("loadMoreCol");
+function updateLoadMoreBtn() {
+    if (shown >= total) {
+        loadMoreCol.className += " d-none";
+    } else {
+        loadMoreCol.className = loadMoreCol.className.replaceAll(" d-none", "");
+    }
 }
 
 await fetchAllStories();
