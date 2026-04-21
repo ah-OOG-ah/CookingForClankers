@@ -28,14 +28,14 @@ function updateResults(...filters) {
   for (const filter of filters) {
     results = results.filter((r) => filter(r.item));
   }
-  updateCount()
+  updateCount();
   updatePage();
 }
 
 function updateCount() {
-    total = results.length;
-    // Try to display at *least* five, but at *most* whatever we had before OR the most we can show.
-    shown = Math.min(Math.max(shown, 5), total);
+  total = results.length;
+  // Try to display at *least* five, but at *most* whatever we had before OR the most we can show.
+  shown = Math.min(Math.max(shown, 5), total);
 }
 
 function loadMore() {
@@ -60,11 +60,11 @@ function updatePage() {
 
 const loadMoreCol = document.getElementById("loadMoreCol");
 function updateLoadMoreBtn() {
-    if (shown >= total) {
-        loadMoreCol.className += " d-none";
-    } else {
-        loadMoreCol.className = loadMoreCol.className.replaceAll(" d-none", "");
-    }
+  if (shown >= total) {
+    loadMoreCol.className += " d-none";
+  } else {
+    loadMoreCol.className = loadMoreCol.className.replaceAll(" d-none", "");
+  }
 }
 
 await fetchAllStories();
