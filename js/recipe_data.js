@@ -25,14 +25,37 @@ const RECIPE_FILES = [
 
 const RECIPE_STORIES = "All_recipe_stories.json";
 
+export class Category {
+  static APPETIZERS = "Appetizers";
+  static AUTUMN = "Autumn";
+  static BEVERAGES = "Beverages";
+  static BREAKFAST = "Breakfast";
+  static DESSERTS = "Desserts";
+  static DINNER = "Dinner";
+  static LUNCH = "Lunch";
+  static SNACKS = "Snacks";
+  static SPRING = "Spring";
+  static SUMMER = "Summer";
+  static WINTER = "Winter";
+}
+
+export class Season {
+  static SPRING = "Spring";
+  static SUMMER = "Summer";
+  static AUTUMN = "Autumn";
+  static WINTER = "Winter";
+  static ALL = "All";
+}
+
 export class Recipe {
   id; // number
   name; // string
-  category; // string
+  /** @type string. See Category for valid values. **/
+  category;
   /** @type {string[]} **/
   ingredients;
   dietary; // string[]
-  /** @type string **/
+  /** @type string. See Season for valid values. **/
   season;
   cuisine; // string
   prep_time; // string
