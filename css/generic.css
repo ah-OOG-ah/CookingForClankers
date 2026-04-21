@@ -20264,24 +20264,26 @@ recipe-card .card:hover .recipe-img-final, recipe-card .card:hover img {
   transform: scale(1.08);
 }
 
-.dietary-chip {
+.chip {
   border-radius: 99999px;
   padding: 0.25em 0.5em;
   font-size: small;
+  border: 1px solid #424549;
+  background-color: rgba(66, 69, 73, 0.062745098);
 }
-.dietary-chip.Vegetarian {
+.chip.Vegetarian {
   border: 1px solid #00ab4d;
   background-color: rgba(0, 171, 77, 0.062745098);
 }
-.dietary-chip.Gluten-Free {
+.chip.Gluten-Free {
   border: 1px solid #dba800;
   background-color: rgba(219, 168, 0, 0.062745098);
 }
-.dietary-chip.Vegan {
+.chip.Vegan {
   border: 1px solid #72cf00;
   background-color: rgba(114, 207, 0, 0.062745098);
 }
-.dietary-chip.High-Protein {
+.chip.High-Protein {
   border: 1px solid #c30000;
   background-color: rgba(195, 0, 0, 0.062745098);
 }

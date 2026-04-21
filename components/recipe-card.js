@@ -48,11 +48,11 @@ class RecipeCard extends HTMLElement {
                 <div class="d-flex flex-wrap gap-2">
                   ${dietary
                     .map((d) => {
-                      return /* html */ `<span class="dietary-chip ${d}">${d}</span>`;
+                      return /* html */ `<span class="chip ${d}">${d}</span>`;
                     })
                     .join("\n")}
                 </div>
-                <i class="bi ${seasonIcon} position-absolute bottom-0 end-0 mx-2 mb-2"></i>
+                <span class="chip position-absolute bottom-0 end-0 mx-2 mb-2">${season}</span>
                 <a href="recipe.html?id=${id}" class="stretched-link"></a>
               </div>
             </div>

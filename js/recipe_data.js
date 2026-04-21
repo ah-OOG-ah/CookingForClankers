@@ -176,7 +176,11 @@ ${await response.text()}`,
 }
 
 export function recipeImage(recipe) {
-  return `${DATA_PATH}/images/${recipe.images[0]}`;
+  return imageSrc(recipe.images[0]);
+}
+
+export function imageSrc(image) {
+  return `${DATA_PATH}/images/${image}`;
 }
 
 /** @param {string} story **/

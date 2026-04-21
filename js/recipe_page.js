@@ -1,18 +1,48 @@
 import { initFavorites } from "./favorites.js";
-import { fetchRecipe, fetchRecipeStory, recipeImage } from "./recipe_data.js";
+import {
+  fetchRecipe,
+  fetchRecipeStory,
+  recipeImage,
+  imageSrc,
+} from "./recipe_data.js";
 
 const populateRecipeData = (recipe) => {
   console.debug(recipe);
   // if (!recipe) window.location.href = "404.html";
-
-  document.querySelectorAll(".recipe-img-final").forEach((element) => {
-    element.innerHTML = `
-<img
-  src="${recipeImage(recipe)}"
-  class="img-fluid rounded-start"
-  alt="${recipe.name}"
-/>`;
-  });
+  document.getElementById("imageCarousel").innerHTML = /* html */ `
+    <div class="carousel-indicators">
+      ${recipe.images
+        .map(
+          (_, i) => /* html */ `
+          <button
+            type="button"
+            data-bs-target="#imageCarouselIndicators"
+            data-bs-slide-to="${i}"
+            ${i === 0 ? `class="active" aria-current="true"` : ""}
+            aria-label="Slide ${i + 1}"
+          ></button>`,
+        )
+        .join("")}
+    </div>
+    <div class="carousel-inner">
+      ${recipe.images
+        .map(
+          (src, i) => /* html */ `
+          <div class="carousel-item ${i === 0 ? "active" : ""}" style="max-height: 600px;">
+            <img src="${imageSrc(src)}" class="d-block w-100 h-100 object-fit-cover" alt="...">
+          </div>`,
+        )
+        .join("")}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+`;
 
   document
     .querySelectorAll(".recipe-name")
@@ -25,7 +55,7 @@ const populateRecipeData = (recipe) => {
   document.querySelectorAll(".recipe-dietary").forEach((element) => {
     let dietaryThings = "";
     for (const dietary of recipe.dietary) {
-      dietaryThings += `<span class="dietary-chip ${dietary}">${dietary}</span>`;
+      dietaryThings += `<span class="chip ${dietary}">${dietary}</span>`;
     }
     element.innerHTML = dietaryThings;
   });

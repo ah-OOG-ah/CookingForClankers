@@ -24,58 +24,54 @@
 
     <main class="container">
       <div class="card mb-3">
-        <div class="row">
-          <div class="col-4 recipe-img-final"></div>
-          <div class="col-8">
-            <div class="card-body">
-              <div class="d-flex justify-content-between">
-                <div class="mb-3">
-                  <h3 class="card-title recipe-name">Loading...</h3>
-                  <h6 class="card-subtitle text-body-secondary">
-                    <span class="recipe-cuisine"></span> -
-                    <span class="recipe-difficulty"></span> (<span
-                      class="recipe-prep-time"
-                    ></span
-                    >)
-                  </h6>
-                </div>
-                <div>
-                  <button id="shareBtn" class="btn btn-outline-light">
-                    Share
-                  </button>
-                  <i class="favorite-btn" role="button"></i>
-                </div>
-              </div>
-              <p class="recipe-story"></p>
-              <p class="card-text">
-                Category: <span class="recipe-category"></span>
-              </p>
-              <div class="d-flex gap-2">
-                <span class="card-text">Dietary:</span>
-                <div class="recipe-dietary d-flex flex-wrap gap-2"></div>
-              </div>
-              <p class="card-text">
-                Season: <span class="recipe-season"></span>
-              </p>
-              <h6 class="card-text">
-                Ingredients
-                <label>
-                  <!-- TODO does this need a button to be obvious? -->
-                  (multiply by
-                  <input
-                    id="mulInput"
-                    required
-                    type="number"
-                    value="1"
-                  /> </label
+        <div
+          id="imageCarousel"
+          class="carousel slide"
+          data-bs-ride="true"
+        ></div>
+        <!-- <div class="row"> -->
+        <!-- <div class="col-4 recipe-img-final"></div> -->
+        <!-- <div class="col-8"> -->
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <div class="mb-3">
+              <h3 class="card-title recipe-name">Loading...</h3>
+              <h6 class="card-subtitle text-body-secondary d-inline">
+                <span class="recipe-cuisine"></span> -
+                <span class="recipe-difficulty"></span> (<span
+                  class="recipe-prep-time"
+                ></span
                 >)
               </h6>
-              <ul class="recipe-ingredients"></ul>
-              <h6 class="card-text">Steps</h6>
-              <ol class="recipe-steps"></ol>
+              <span class="chip recipe-season"></span>
+            </div>
+            <div>
+              <button id="shareBtn" class="btn btn-outline-light">Share</button>
+              <i class="favorite-btn" role="button"></i>
             </div>
           </div>
+          <p class="recipe-story"></p>
+          <p class="card-text">
+            Category: <span class="recipe-category"></span>
+          </p>
+          <div class="d-flex gap-2">
+            <span class="card-text">Dietary:</span>
+            <div class="recipe-dietary d-flex flex-wrap gap-2"></div>
+          </div>
+          <h6 class="card-text">
+            Ingredients
+            <label>
+              <!-- TODO does this need a button to be obvious? -->
+              (multiply by
+              <input id="mulInput" required type="number" value="1" /> </label
+            >)
+          </h6>
+          <ul class="recipe-ingredients"></ul>
+          <h6 class="card-text">Steps</h6>
+          <ol class="recipe-steps"></ol>
         </div>
+        <!-- </div> -->
+        <!-- </div> -->
       </div>
     </main>
 

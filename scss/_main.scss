@@ -82,10 +82,13 @@ recipe-card .card {
   }
 }
 
-.dietary-chip {
+.chip {
   border-radius: 99999px;
   padding: 0.25em 0.5em;
   font-size: small;
+
+  border: 1px solid #424549;
+  background-color: #42454910;
 
   &.Vegetarian {
     border: 1px solid #00ab4d;
