@@ -11,7 +11,9 @@ await fetchAllRecipes();
 
 const urlParams = new URLSearchParams(window.location.search);
 let searchString = urlParams.get("query");
-document.getElementById("searchSpan").innerText = searchString;
+/** @type HTMLInputElement **/
+const searchInput = document.getElementById("searchSpan");
+searchInput.value = searchString;
 
 /** @type {Fuse<Recipe>} **/
 const fuse = new Fuse(ALL_RECIPES.values().toArray(), { keys: ["name"] });
@@ -44,6 +46,8 @@ function getFilters() {
  **/
 function updateResults() {
   const filters = getFilters();
+  searchString = searchInput.value;
+
   results = fuse.search(searchString);
   for (const filter of filters) {
     results = results.filter((r) => filter(r.item));
@@ -94,7 +98,5 @@ document.getElementById("loadMore").addEventListener("click", () => {
   updatePage();
 });
 
-filterForm.addEventListener("input", (event) => {
-  event.preventDefault();
-  updateResults();
-});
+filterForm.addEventListener("input", updateResults);
+searchInput.addEventListener("input", updateResults);
