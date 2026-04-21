@@ -25,7 +25,7 @@ const populateRecipeData = (recipe) => {
   document.querySelectorAll(".recipe-dietary").forEach((element) => {
     let dietaryThings = "";
     for (const dietary of recipe.dietary) {
-      dietaryThings += `<li>${dietary}</li>`;
+      dietaryThings += `<span class="dietary-chip ${dietary}">${dietary}</span>`;
     }
     element.innerHTML = dietaryThings;
   });
