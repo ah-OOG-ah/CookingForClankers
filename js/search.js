@@ -29,14 +29,14 @@ const filterForm = document.getElementById("filters");
  * @return {{function(Recipe):boolean}[]}
  **/
 function getFilters() {
-    const formData = new FormData(filterForm);
-    const filters = [];
+  const formData = new FormData(filterForm);
+  const filters = [];
 
-    const season = formData.get("season");
-    if (season !== "Any") filters.push((r) => r.season === season);
-    const category = formData.get("category");
-    if (category !== "Any") filters.push((r) => r.category === category);
-    return filters;
+  const season = formData.get("season");
+  if (season !== "Any") filters.push((r) => r.season === season);
+  const category = formData.get("category");
+  if (category !== "Any") filters.push((r) => r.category === category);
+  return filters;
 }
 
 /**
@@ -64,11 +64,11 @@ function loadMore() {
 
 const loadMoreCol = document.getElementById("loadMoreCol");
 function updateLoadMoreBtn() {
-    if (shown >= total) {
-        loadMoreCol.className += " d-none";
-    } else {
-        loadMoreCol.className = loadMoreCol.className.replaceAll(" d-none", "");
-    }
+  if (shown >= total) {
+    loadMoreCol.className += " d-none";
+  } else {
+    loadMoreCol.className = loadMoreCol.className.replaceAll(" d-none", "");
+  }
 }
 
 function updatePage() {
