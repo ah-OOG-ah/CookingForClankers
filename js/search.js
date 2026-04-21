@@ -10,17 +10,29 @@ import { initFavorites } from "./favorites.js";
 await fetchAllRecipes();
 
 const urlParams = new URLSearchParams(window.location.search);
-const searchString = urlParams.get("query");
+let searchString = urlParams.get("query");
 document.getElementById("searchSpan").innerText = searchString;
 
 /** @type {Fuse<Recipe>} **/
 const fuse = new Fuse(ALL_RECIPES.values().toArray(), { keys: ["name"] });
 // noinspection JSValidateTypes The proper types are sadly only visible with Typescript.
 /** @type {FuseResult<Recipe>[]} **/
-const results = fuse.search(searchString);
+let results = fuse.search(searchString);
 
-const total = results.length;
+let total = results.length;
 let shown = 0;
+
+/** @param {function(Recipe):boolean} filters **/
+function updateResults(...filters) {
+  results = fuse.search(searchString);
+  for (const filter of filters) {
+    results = results.filter((r) => filter(r.item));
+  }
+  total = results.length;
+  // Try to display at *least* five, but at *most* whatever we had before OR the most we can show.
+  shown = Math.min(Math.max(shown, 5), total);
+  updatePage();
+}
 
 function loadMore() {
   shown = Math.min(shown + 5, total);
@@ -52,3 +64,12 @@ document.getElementById("loadMore").addEventListener("click", () => {
   updatePage();
 });
 
+const filterForm = document.getElementById("filters");
+filterForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const formData = new FormData(filterForm);
+  const season = formData.get("season");
+  if (season === "Any") updateResults();
+  else updateResults((r) => r.season === season);
+});

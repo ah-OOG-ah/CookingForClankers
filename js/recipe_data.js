@@ -32,7 +32,8 @@ export class Recipe {
   /** @type {string[]} **/
   ingredients;
   dietary; // string[]
-  season; // string
+  /** @type string **/
+  season;
   cuisine; // string
   prep_time; // string
   difficulty; // string
