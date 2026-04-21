@@ -3,6 +3,10 @@
 $bootstrap-icons-font-dir: "../node_modules/bootstrap-icons/font/fonts";
 @import "../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
 
+* {
+  box-sizing: border-box;
+}
+
 .favorite-btn {
   color: red;
   font-size: 1.2rem;
@@ -12,8 +16,7 @@ $bootstrap-icons-font-dir: "../node_modules/bootstrap-icons/font/fonts";
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  padding-left: 1rem;
-  padding-right: 0.5rem;
+  padding: 0.5rem;
   z-index: 10;
 
   &:hover {
@@ -77,6 +80,48 @@ recipe-card .card {
   &:hover img {
     transform: scale(1.08);
   }
+}
+
+.dietary-chip {
+  border-radius: 99999px;
+  padding: 0.25em 0.5em;
+  font-size: small;
+
+  &.Vegetarian {
+    border: 1px solid #00ab4d;
+    background-color: #00ab4d10;
+  }
+
+  &.Gluten-Free {
+    border: 1px solid #dba800;
+    background-color: #dba80010;
+  }
+
+  &.Vegan {
+    border: 1px solid #72cf00;
+    background-color: #72cf0010;
+  }
+
+  &.High-Protein {
+    border: 1px solid #c30000;
+    background-color: #c3000010;
+  }
+}
+
+.bi-flower2 {
+  color: #7ce100;
+}
+
+.bi-sun-fill {
+  color: #ffea00;
+}
+
+.bi-leaf-fill {
+  color: #ff8800;
+}
+
+.bi-snow {
+  color: #00eeff;
 }
 
 html {
