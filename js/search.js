@@ -26,7 +26,8 @@ const fuse = new Fuse(ALL_RECIPES.values().toArray(), {
 let results = fuse.search(searchString);
 
 let total = results.length;
-let shown = 5;
+// Starts at zero and is updated by loadMore, since the search page may *start* with <5 results
+let shown = 0;
 
 const filterForm = document.getElementById("filters");
 
@@ -96,6 +97,7 @@ function updatePage() {
 }
 
 await fetchAllStories();
+loadMore();
 updatePage();
 document.getElementById("loadMore").addEventListener("click", () => {
   loadMore();
