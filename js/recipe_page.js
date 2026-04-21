@@ -25,7 +25,7 @@ const populateRecipeData = (recipe) => {
   document.querySelectorAll(".recipe-dietary").forEach((element) => {
     let dietaryThings = "";
     for (const dietary of recipe.dietary) {
-      dietaryThings += `<li>${dietary}</li>`;
+      dietaryThings += `<span class="dietary-chip ${dietary}">${dietary}</span>`;
     }
     element.innerHTML = dietaryThings;
   });
@@ -68,6 +68,8 @@ const urlParams = new URLSearchParams(queryString);
 const recipeId = parseInt(urlParams.get("id"));
 if (!recipeId) alert("No recipe ID given!");
 
+document.getElementById("linkText").textContent = window.location.href;
+
 document
   .querySelectorAll(".favorite-btn")
   .forEach((element) => (element.dataset.recipeId = recipeId));
@@ -78,11 +80,16 @@ recipe.then(populateRecipeData);
 fetchRecipeStory(recipeId).then(populateRecipeStory);
 
 const shareBtn = document.getElementById("shareBtn");
-function copyShareLink() {
-  navigator.clipboard.writeText(window.location.href).then(() => {
+const dialog = document.getElementById("shareDialog");
+async function copyShareLink() {
+  try {
+    await navigator.clipboard.writeText(window.location.href);
     shareBtn.innerText = "Copied!";
     setTimeout(() => (shareBtn.innerText = "Share"), 1000);
-  });
+  } catch (error) {
+    console.debug(error);
+    new bootstrap.Modal(dialog).show();
+  }
 }
 shareBtn.addEventListener("click", copyShareLink);
 

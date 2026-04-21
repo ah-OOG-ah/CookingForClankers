@@ -29,7 +29,16 @@
           <div class="col-8">
             <div class="card-body">
               <div class="d-flex justify-content-between">
-                <h3 class="card-title recipe-name">Loading...</h3>
+                <div class="mb-3">
+                  <h3 class="card-title recipe-name">Loading...</h3>
+                  <h6 class="card-subtitle text-body-secondary">
+                    <span class="recipe-cuisine"></span> -
+                    <span class="recipe-difficulty"></span> (<span
+                      class="recipe-prep-time"
+                    ></span
+                    >)
+                  </h6>
+                </div>
                 <div>
                   <button id="shareBtn" class="btn btn-outline-light">
                     Share
@@ -41,25 +50,19 @@
               <p class="card-text">
                 Category: <span class="recipe-category"></span>
               </p>
-              <p class="card-text">Dietary</p>
-              <ul class="recipe-dietary"></ul>
+              <div class="d-flex gap-2">
+                <span class="card-text">Dietary:</span>
+                <div class="recipe-dietary d-flex flex-wrap gap-2"></div>
+              </div>
               <p class="card-text">
                 Season: <span class="recipe-season"></span>
-              </p>
-              <p class="card-text">
-                Cuisine: <span class="recipe-cuisine"></span>
-              </p>
-              <p class="card-text">
-                Prep Time: <span class="recipe-prep-time"></span>
-              </p>
-              <p class="card-text">
-                Difficulty: <span class="recipe-difficulty"></span>
               </p>
               <h6 class="card-text">
                 Ingredients
                 <label>
                   <!-- TODO does this need a button to be obvious? -->
-                  (multiply by <input
+                  (multiply by
+                  <input
                     id="mulInput"
                     required
                     type="number"
@@ -75,6 +78,21 @@
         </div>
       </div>
     </main>
+
+    <div id="shareDialog" class="modal text-center" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <p>Copy this link!</p>
+            <code id="linkText" class="text-light"></code>
+            <br />
+            <button class="btn btn-primary mt-3" data-bs-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <footer-component></footer-component>
   </body>

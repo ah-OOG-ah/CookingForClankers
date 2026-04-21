@@ -5,25 +5,57 @@ class RecipeCard extends HTMLElement {
     super();
   }
 
+  seasonIconData(season) {}
+
   connectedCallback() {
     // define data here
+    const imgSrc = this.getAttribute("img-src");
     const id = this.getAttribute("id");
     const name = this.getAttribute("name") || "Loading...";
-    const imgSrc = this.getAttribute("img-src");
+    const cuisine = this.getAttribute("cuisine");
+    const difficulty = this.getAttribute("difficulty");
+    const prepTime = this.getAttribute("prep-time");
     const story = this.getAttribute("story") || "Loading...";
+    const dietary = (this.getAttribute("dietary") || "").split(",");
+    const season = this.getAttribute("season");
+    const seasonIcon =
+      season === "Spring"
+        ? "bi-flower2"
+        : season === "Summer"
+          ? "bi-sun-fill"
+          : season === "Autumn"
+            ? "bi-leaf-fill"
+            : season === "Winter"
+              ? "bi-snow"
+              : "bi-calendar-fill";
 
-    /* TODO make it horizontal */
-    this.innerHTML = `
+    this.innerHTML = /* html */ `
         <article class="card">
-          <div class="position-absolute top-0 end-0 m-2">
-            <i class="favorite-btn" role="button" data-recipe-id=${id}></i>
-          </div>
-          <img src=${imgSrc} class="card-img" alt="..."/>
-
-          <div class="card-body">
-            <h5 class="card-title">${name}</h5>
-            <p class="card-text">${story}</p>
-            <a href="recipe.html?id=${id}" class="stretched-link"></a>
+          <div class="row">
+            <div class="col-lg-4 px-0">
+              <img src=${imgSrc} class="card-img rounded w-100 h-100 object-fit-cover" alt="..."/>
+            </div>
+            <div class="col-lg-8 px-0">
+              <div class="card-body px-3">
+                <div class="d-flex justify-content-between mb-2">
+                  <div>
+                    <h5 class="card-title">${name}</h5>
+                    <h6 class="card-subtitle">${cuisine} - ${difficulty} (${prepTime})</h6>
+                  </div>
+                  <i class="favorite-btn" role="button" data-recipe-id=${id}></i>
+                </div>
+                <p class="card-text">${story}</p>
+                <div class="d-flex flex-wrap gap-2">
+                  ${dietary
+                    .map((d) => {
+                      return /* html */ `<span class="dietary-chip ${d}">${d}</span>`;
+                    })
+                    .join("\n")}
+                </div>
+                <i class="bi ${seasonIcon} position-absolute bottom-0 end-0 mx-2 mb-2"></i>
+                <a href="recipe.html?id=${id}" class="stretched-link"></a>
+              </div>
+            </div>
           </div>
         </article>`;
   }
