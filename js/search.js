@@ -20,10 +20,30 @@ const fuse = new Fuse(ALL_RECIPES.values().toArray(), { keys: ["name"] });
 let results = fuse.search(searchString);
 
 let total = results.length;
-let shown = 0;
+let shown = 5;
 
-/** @param {function(Recipe):boolean} filters **/
-function updateResults(...filters) {
+const filterForm = document.getElementById("filters");
+
+/**
+ * Extract user filters from the DOM.
+ * @return {{function(Recipe):boolean}[]}
+ **/
+function getFilters() {
+    const formData = new FormData(filterForm);
+    const filters = [];
+
+    const season = formData.get("season");
+    if (season !== "Any") filters.push((r) => r.season === season);
+    const category = formData.get("category");
+    if (category !== "Any") filters.push((r) => r.category === category);
+    return filters;
+}
+
+/**
+ * Updates the search results.
+ **/
+function updateResults() {
+  const filters = getFilters();
   results = fuse.search(searchString);
   for (const filter of filters) {
     results = results.filter((r) => filter(r.item));
@@ -42,6 +62,15 @@ function loadMore() {
   shown = Math.min(shown + 5, total);
 }
 
+const loadMoreCol = document.getElementById("loadMoreCol");
+function updateLoadMoreBtn() {
+    if (shown >= total) {
+        loadMoreCol.className += " d-none";
+    } else {
+        loadMoreCol.className = loadMoreCol.className.replaceAll(" d-none", "");
+    }
+}
+
 function updatePage() {
   document.getElementById("totalCount").innerText = total.toString();
   document.getElementById("shownCount").innerText = shown.toString();
@@ -58,33 +87,14 @@ function updatePage() {
   initFavorites();
 }
 
-const loadMoreCol = document.getElementById("loadMoreCol");
-function updateLoadMoreBtn() {
-  if (shown >= total) {
-    loadMoreCol.className += " d-none";
-  } else {
-    loadMoreCol.className = loadMoreCol.className.replaceAll(" d-none", "");
-  }
-}
-
 await fetchAllStories();
-loadMore();
 updatePage();
 document.getElementById("loadMore").addEventListener("click", () => {
   loadMore();
   updatePage();
 });
 
-const filterForm = document.getElementById("filters");
 filterForm.addEventListener("submit", (event) => {
   event.preventDefault();
-
-  const formData = new FormData(filterForm);
-  const filters = [];
-
-  const season = formData.get("season");
-  if (season !== "Any") filters.push((r) => r.season === season);
-  const category = formData.get("category");
-  if (category !== "Any") filters.push((r) => r.category === category);
-  updateResults(...filters);
+  updateResults();
 });
