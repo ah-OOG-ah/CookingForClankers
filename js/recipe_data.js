@@ -25,6 +25,8 @@ const RECIPE_FILES = [
 
 const RECIPE_STORIES = "All_recipe_stories.json";
 
+export const NUM_RECIPES = 79;
+
 export class Category {
   static APPETIZERS = "Appetizers";
   static AUTUMN = "Autumn";

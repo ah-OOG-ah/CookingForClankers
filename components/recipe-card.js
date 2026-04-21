@@ -48,6 +48,7 @@ class RecipeCard extends HTMLElement {
                 <div class="d-flex flex-wrap gap-2">
                   ${dietary
                     .map((d) => {
+                      if (!d) return ``;
                       return /* html */ `<span class="chip ${d}">${d}</span>`;
                     })
                     .join("\n")}
