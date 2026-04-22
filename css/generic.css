@@ -20299,4 +20299,20 @@ body {
   grid-template-rows: auto 1fr auto;
 }
 
+.timer-container {
+  background: #212529;
+  border-color: #495057;
+  transition: all 0.2s ease;
+}
+.timer-container .timer-display {
+  font-family: "SG Mono", monospace;
+  letter-spacing: 4px;
+}
+.timer-container .timer-open-btn {
+  transition: transform 0.3s ease;
+}
+.timer-container .timer-open-btn:hover {
+  transform: rotate(180deg);
+}
+
 /*# sourceMappingURL=generic.css.map */

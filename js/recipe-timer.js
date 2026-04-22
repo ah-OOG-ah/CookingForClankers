@@ -72,7 +72,9 @@ class RecipeTimer extends HTMLElement {
 
     openBtn.addEventListener("click", () => {
       if (!this.audioContext) {
-        this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        this.audioContext = new (
+          window.AudioContext || window.webkitAudioContext
+        )();
       }
       if (this.audioContext.state === "suspended") this.audioContext.resume();
       this.updateModalDisplay();
@@ -101,9 +103,9 @@ class RecipeTimer extends HTMLElement {
     });
 
     pauseBtn.addEventListener("click", () => {
-     this.pause();
-     startBtn.classList.remove("d-none");
-     pauseBtn.classList.add("d-none");
+      this.pause();
+      startBtn.classList.remove("d-none");
+      pauseBtn.classList.add("d-none");
     });
 
     modalEl.addEventListener("hidden.bs.modal", () => {});
@@ -114,7 +116,7 @@ class RecipeTimer extends HTMLElement {
     if (display) display.textContent = this.formatTime(this.timeLeft);
   }
 
-   updateModalDisplay() {
+  updateModalDisplay() {
     const modalDisplay = this.querySelector("#modal-display");
     if (modalDisplay) modalDisplay.textContent = this.formatTime(this.timeLeft);
   }
@@ -146,12 +148,12 @@ class RecipeTimer extends HTMLElement {
     }
   }
 
-stopAlarm() {
-  if (this.alarmInterval) {
-    clearInterval(this.alarmInterval);
-    this.alarmInterval = null;
+  stopAlarm() {
+    if (this.alarmInterval) {
+      clearInterval(this.alarmInterval);
+      this.alarmInterval = null;
+    }
   }
-}
 
   timerFinished() {
     alert("Your Timer has finished Clanker! Your Recipe is Ready!");
@@ -162,7 +164,7 @@ stopAlarm() {
     localStorage.setItem(`timer-${this.recipeId}`, JSON.stringify(data));
   }
 
-  loadState(){
+  loadState() {
     const saved = localStorage.getItem(`timer-${this.recipeId}`);
     if (saved) this.timeLeft = JSON.parse(saved).timeLeft || 0;
   }
