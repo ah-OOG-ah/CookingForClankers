@@ -79,6 +79,25 @@ function updateResults() {
   for (const filter of filters) {
     results = results.filter((v, i, a) => filter(v));
   }
+
+  // Sort the results according to the user's wishes
+  const sortOrder = document.getElementById("sortBy");
+  switch (sortOrder.value) {
+    case "Relevance": {
+      break;
+    }
+    case "Name (A-Z)": {
+      results.sort((a, b) => a.name.localeCompare(b.name));
+      break;
+    }
+    case "Prep Time": {
+      break;
+    }
+    case "Difficulty": {
+      break;
+    }
+  }
+
   updateCount();
   updatePage();
 }
