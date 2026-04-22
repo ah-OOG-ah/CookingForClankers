@@ -63,7 +63,7 @@ function getFilters() {
 }
 
 /**
- * Updates the search results.
+ * Updates the search results, then refreshes the DOM.
  **/
 function updateResults() {
   const filters = getFilters();
