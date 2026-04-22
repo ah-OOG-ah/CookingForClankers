@@ -70,10 +70,34 @@ export class Recipe {
   // And the next ones are calculated for indexing
   /** @type string **/
   ingredientString;
+  /** @type number **/
+  prepMinutes;
 
   constructor(obj) {
     obj && Object.assign(this, obj);
     this.ingredientString = this.ingredients.join(" ");
+    this.prepMinutes = this.#getPrepMinutes(this.prep_time);
+  }
+
+  /**
+   * This is how we have to get the prep time, because we can't have nice things.
+   * @param {string} time
+   * @return number
+   */
+  #getPrepMinutes(time) {
+    let match = time.match(/^(\d+) min$/);
+    if (match !== null) return Number.parseInt(match[1]);
+
+    match = time.match(/^(\d+) min \+ overnight$/);
+    if (match !== null) return Number.parseInt(match[1]) + 12 * 60;
+
+    match = time.match(/^(\d+) hr.*$/);
+    if (match !== null) return Number.parseInt(match[1]) * 60;
+
+    match = time.match(/^(\d+) hour.*$/);
+    if (match !== null) return Number.parseInt(match[1]) * 60;
+
+    throw new Error("Invalid prep_time '" + time + "'!");
   }
 }
 
