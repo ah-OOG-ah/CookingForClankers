@@ -89,9 +89,9 @@ Total Points From Standard Requirements = 80
 - [x] Recipe sharing links _DA_
 - [x] Ingredient multiplication _DA_
 - [x] Advanced dynamic search _DA_
-- [] Theme switcher
+- [x] Theme switcher_JE
 - [] Recipe submission form
-- [] Cooking timer
+- [] Cooking timer_AD
 - [] User ratings and reviews
 - [] Dynamic recipe filter and sorting
 - [] Animations for recipe actions (partially done!)
@@ -217,7 +217,7 @@ tests.
 - [] Advanced dynamic search
 - [x] Theme switcher _JE_
 - [] Recipe submission form
-- [] Cooking timer
+- [x] Cooking timer _AD_
 - [x] User ratings and reviews _JE_
 - [] Dynamic recipe filter and sorting
 - [] Animations for recipe actions (partially done!)

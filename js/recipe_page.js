@@ -249,3 +249,5 @@ document.getElementById("submitReview").addEventListener("click", (event) => {
 });
 
 updateReviews();
+
+document.getElementById("recipeTimer").setAttribute("recipe-id", recipe.id);

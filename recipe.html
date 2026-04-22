@@ -19,6 +19,7 @@
     ></script>
     <script src="js/theme-toggle.js" defer></script>
     <script type="module" src="js/recipe_page.js" defer></script>
+    <script type="module" src="js/recipe-timer.js" defer></script>
   </head>
   <body>
     <header-component></header-component>
@@ -31,23 +32,24 @@
           data-bs-ride="true"
         ></div>
         <div class="card-body">
-          <div class="d-flex justify-content-between">
-            <div class="mb-3">
+          <div class="d-flex justify-content-between align-items-start gap-3">
+            <div class="mb-3 flex-grow-1">
               <h3 class="card-title recipe-name">Loading...</h3>
               <h6 class="card-subtitle text-body-secondary d-inline">
                 <span class="recipe-cuisine"></span> -
-                <span class="recipe-difficulty"></span> (<span
-                  class="recipe-prep-time"
-                ></span
-                >)
+                <span class="recipe-difficulty"></span> (<span class="recipe-prep-time"></span>)
               </h6>
               <span class="chip recipe-season"></span>
             </div>
+
+            <recipe-timer id="recipeTimer" recipe-id=""></recipe-timer>
+
             <div>
               <button id="shareBtn" class="btn btn-outline-light">Share</button>
               <i class="favorite-btn" role="button"></i>
             </div>
-          </div>
+          </div> 
+          
           <p class="recipe-story"></p>
           <p class="card-text">
             Category: <span class="recipe-category"></span>

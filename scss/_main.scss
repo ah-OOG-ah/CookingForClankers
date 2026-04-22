@@ -123,3 +123,21 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
+
+.timer-container {
+  background: #212529 ;
+  border-color: #495057 ;
+  transition: all 0.2s ease;
+
+  .timer-display {
+    font-family: "SG Mono", monospace;
+    letter-spacing: 4px;
+  }
+
+  .timer-open-btn {
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: rotate(180deg);
+    }
+  }
+}
