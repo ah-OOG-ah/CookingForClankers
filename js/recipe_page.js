@@ -226,9 +226,14 @@ function reviewHtml(review) {
 
 function updateReviews() {
   const reviews = getReviews();
+  const avgRatingElement = document.getElementById("averageRating");
+  if (reviews.length === 0) {
+    avgRatingElement.textContent = `0`;
+    return;
+  }
   const avg =
     reviews.reduce((acc, rev) => acc + rev.rating, 0) / reviews.length;
-  document.getElementById("averageRating").textContent = `${avg.toFixed(2)}`;
+  avgRatingElement.textContent = `${avg.toFixed(2)}`;
 
   const reviewContainer = document.getElementById("reviews");
   reviewContainer.innerHTML = reviews.map(reviewHtml).join("<hr />");
