@@ -41,6 +41,13 @@ export class Category {
   static WINTER = "Winter";
 }
 
+export class Dietary {
+    static GLUTEN_FREE = "Gluten-Free";
+    static HIGH_PROTEIN = "High-Protein";
+    static VEGAN = "Vegan";
+    static VEGETARIAN = "Vegetarian";
+}
+
 export class Season {
   static SPRING = "Spring";
   static SUMMER = "Summer";
@@ -74,7 +81,8 @@ export class Recipe {
   category;
   /** @type {string[]} **/
   ingredients;
-  dietary; // string[]
+  /** @type {string[]} */
+  dietary;
   /** @type string. See Season for valid values. **/
   season;
   cuisine; // string
