@@ -20303,4 +20303,8 @@ body {
   max-height: 600px;
 }
 
+.bi-star, .bi-star-fill {
+  color: #ffc107;
+}
+
 /*# sourceMappingURL=recipe.css.map */

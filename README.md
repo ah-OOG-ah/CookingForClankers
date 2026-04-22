@@ -218,7 +218,7 @@ tests.
 - [x] Theme switcher _JE_
 - [] Recipe submission form
 - [] Cooking timer
-- [] User ratings and reviews
+- [x] User ratings and reviews _JE_
 - [] Dynamic recipe filter and sorting
 - [] Animations for recipe actions (partially done!)
 - [x] Recipe of the day feature _JE_

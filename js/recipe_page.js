@@ -160,3 +160,87 @@ mulInput.addEventListener("keydown", async (event) => {
 
   setIngredients(await recipe, mulInput.valueAsNumber);
 });
+
+const stars = document.querySelectorAll(".star-input");
+let selectedRating = 5;
+function setStarsFill(rating) {
+  [...stars]
+    .slice(0, rating)
+    .forEach((s) => s.classList.replace("bi-star", "bi-star-fill"));
+  [...stars]
+    .slice(rating)
+    .forEach((s) => s.classList.replace("bi-star-fill", "bi-star"));
+}
+function setRating(rating) {
+  selectedRating = rating;
+  document.getElementById("selectedRating").textContent = `${selectedRating}`;
+}
+setStarsFill(selectedRating);
+setRating(selectedRating);
+stars.forEach((star, i) => {
+  const rating = i + 1;
+
+  star.addEventListener("click", (event) => {
+    setRating(rating);
+    setStarsFill(rating);
+  });
+
+  star.addEventListener("mouseover", (event) => {
+    setStarsFill(rating);
+  });
+
+  star.addEventListener("mouseout", (event) => {
+    setStarsFill(selectedRating);
+  });
+});
+
+const reviewsKey = `${recipeId}_reviews`;
+function getReviews() {
+  return JSON.parse(localStorage.getItem(reviewsKey)) || [];
+}
+function setReviews(reviewsList) {
+  localStorage.setItem(reviewsKey, JSON.stringify(reviewsList));
+}
+
+function addReview(rating, comment) {
+  let reviews = getReviews();
+  reviews.unshift({
+    rating: rating,
+    comment: comment,
+  });
+  setReviews(reviews);
+}
+
+function reviewHtml(review) {
+  return /* html */ `
+  <div>
+    <i class="bi ${review.rating >= 1 ? "bi-star-fill" : "bi-star"}"></i>
+    <i class="bi ${review.rating >= 2 ? "bi-star-fill" : "bi-star"}"></i>
+    <i class="bi ${review.rating >= 3 ? "bi-star-fill" : "bi-star"}"></i>
+    <i class="bi ${review.rating >= 4 ? "bi-star-fill" : "bi-star"}"></i>
+    <i class="bi ${review.rating >= 5 ? "bi-star-fill" : "bi-star"}"></i>
+    <span>${review.comment}</span>
+  </div>
+  `;
+}
+
+function updateReviews() {
+  const reviews = getReviews();
+  const avg =
+    reviews.reduce((acc, rev) => acc + rev.rating, 0) / reviews.length;
+  document.getElementById("averageRating").textContent = `${avg.toFixed(2)}`;
+
+  const reviewContainer = document.getElementById("reviews");
+  reviewContainer.innerHTML = reviews.map(reviewHtml).join("<hr />");
+}
+
+document.getElementById("submitReview").addEventListener("click", (event) => {
+  const commentBox = document.getElementById("reviewComment");
+  const comment = commentBox.value;
+  addReview(selectedRating, comment);
+  commentBox.value = "";
+
+  updateReviews();
+});
+
+updateReviews();

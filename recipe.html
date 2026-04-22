@@ -30,9 +30,6 @@
           class="carousel slide"
           data-bs-ride="true"
         ></div>
-        <!-- <div class="row"> -->
-        <!-- <div class="col-4 recipe-img-final"></div> -->
-        <!-- <div class="col-8"> -->
         <div class="card-body">
           <div class="d-flex justify-content-between">
             <div class="mb-3">
@@ -71,8 +68,32 @@
           <h6 class="card-text">Steps</h6>
           <ol class="recipe-steps"></ol>
         </div>
-        <!-- </div> -->
-        <!-- </div> -->
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h3>Leave a review!</h3>
+          <div>
+            <i class="star-input bi bi-star-fill"></i>
+            <i class="star-input bi bi-star-fill"></i>
+            <i class="star-input bi bi-star-fill"></i>
+            <i class="star-input bi bi-star-fill"></i>
+            <i class="star-input bi bi-star-fill"></i>
+            <span>Your rating: <span id="selectedRating"></span>/5</span>
+          </div>
+          <textarea id="reviewComment" class="form-control my-2"></textarea>
+          <div class="text-center">
+            <button id="submitReview" class="btn btn-outline-light">
+              Submit Review
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h3>Reviews</h3>
+          <p>Average rating: <span id="averageRating"></span>/5</p>
+          <div id="reviews"></div>
+        </div>
       </div>
     </main>
 
