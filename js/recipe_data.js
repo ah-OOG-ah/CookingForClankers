@@ -49,6 +49,23 @@ export class Season {
   static ALL = "All";
 }
 
+export class Difficulty {
+  static MODERATE = "Moderate";
+  static EASY = "Easy";
+
+  /** @param {string} diff */
+  static toLevel(diff) {
+    switch (diff) {
+      case Difficulty.EASY:
+        return 0;
+      case Difficulty.MODERATE:
+        return 1;
+      default:
+        throw new Error(diff + " is not a difficulty!");
+    }
+  }
+}
+
 export class Recipe {
   // The following properties come from the JSON files
   id; // number
@@ -72,11 +89,14 @@ export class Recipe {
   ingredientString;
   /** @type number **/
   prepMinutes;
+  /** @type number **/
+  difficultyLevel;
 
   constructor(obj) {
     obj && Object.assign(this, obj);
     this.ingredientString = this.ingredients.join(" ");
     this.prepMinutes = this.#getPrepMinutes(this.prep_time);
+    this.difficultyLevel = Difficulty.toLevel(this.difficulty);
   }
 
   /**

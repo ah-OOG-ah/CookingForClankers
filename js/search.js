@@ -96,6 +96,7 @@ function updateResults() {
       break;
     }
     case "Difficulty": {
+      results.sort((a, b) => b.difficultyLevel - a.difficultyLevel);
       break;
     }
   }
