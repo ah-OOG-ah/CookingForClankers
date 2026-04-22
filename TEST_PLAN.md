@@ -45,3 +45,13 @@ The device and browser will be recorded for each subject.
 5. **Leave a Scathing Review on a Recipe**
 
 ## Metrics to Collect
+
+Functional (Quantitative)
+
+- Clicks/task
+- Time/task
+
+Design (Qualitative)
+
+- What parts, if any, confused you?
+- Were any parts misleading or difficult to distinguish/read?
