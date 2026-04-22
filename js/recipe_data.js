@@ -50,6 +50,7 @@ export class Season {
 }
 
 export class Recipe {
+  // The following properties come from the JSON files
   id; // number
   name; // string
   /** @type string. See Category for valid values. **/
@@ -66,8 +67,13 @@ export class Recipe {
   images;
   steps; // string[]
 
+  // And the next ones are calculated for indexing
+  /** @type string **/
+  ingredientString;
+
   constructor(obj) {
     obj && Object.assign(this, obj);
+    this.ingredientString = this.ingredients.join(" ");
   }
 }
 

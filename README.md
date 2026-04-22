@@ -88,7 +88,7 @@ Total Points From Standard Requirements = 80
 
 - [x] Recipe sharing links _DA_
 - [x] Ingredient multiplication _DA_
-- [] Advanced dynamic search
+- [x] Advanced dynamic search _DA_
 - [] Theme switcher
 - [] Recipe submission form
 - [] Cooking timer
