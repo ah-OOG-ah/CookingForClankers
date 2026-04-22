@@ -80,14 +80,15 @@ function updateResults() {
     results = results.filter((v, i, a) => filter(v));
   }
 
-  // Sort the results according to the user's wishes
+  // Sort the results according to the user's wishes. All of these sorts should sort
+  // descending.
   const sortOrder = document.getElementById("sortBy");
   switch (sortOrder.value) {
     case "Relevance": {
       break;
     }
     case "Name (A-Z)": {
-      results.sort((a, b) => a.name.localeCompare(b.name));
+      results.sort((a, b) => b.name.localeCompare(a.name));
       break;
     }
     case "Prep Time": {
@@ -96,6 +97,11 @@ function updateResults() {
     case "Difficulty": {
       break;
     }
+  }
+
+  // And reverse it if needed.
+  if (document.getElementById("order").value === "Ascending") {
+      results.reverse();
   }
 
   updateCount();
