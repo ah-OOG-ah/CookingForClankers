@@ -101,7 +101,7 @@ function updateResults() {
 
   // And reverse it if needed.
   if (document.getElementById("order").value === "Ascending") {
-      results.reverse();
+    results.reverse();
   }
 
   updateCount();
