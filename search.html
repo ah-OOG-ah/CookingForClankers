@@ -28,39 +28,70 @@
 
     <main class="container">
       <form id="filters">
-        <fieldset>
-          <legend>Filters</legend>
-          <div class="mb-3">
-            <label for="season" class="form-label">Season: </label>
-            <select name="season" id="season" class="form-select">
-              <option>Any</option>
-              <option>All</option>
-              <option>Spring</option>
-              <option>Summer</option>
-              <option>Autumn</option>
-              <option>Winter</option>
-            </select>
-            <label for="category" class="form-label">Category: </label>
-            <select name="category" id="category" class="form-select">
-              <option>Any</option>
-              <option>Appetizers</option>
-              <option>Autumn</option>
-              <option>Beverages</option>
-              <option>Breakfast</option>
-              <option>Desserts</option>
-              <option>Dinner</option>
-              <option>Lunch</option>
-              <option>Snacks</option>
-              <option>Spring</option>
-              <option>Summer</option>
-              <option>Winter</option>
-            </select>
-            <label class="form-label" for="ingredients">
-              Ingredients:
-              <input class="form-control" name="ingredients" id="ingredients" />
-            </label>
+        <div class="row">
+          <div class="col">
+            <fieldset>
+              <legend>Sort</legend>
+              <div class="mb-3">
+                <label for="sortBy">
+                  Sort by:
+                </label>
+                <select class="form-select" name="sortBy" id="sortBy">
+                  <option>Relevance</option>
+                  <option>Alphabetical</option>
+                  <option>Prep Time</option>
+                  <option>Difficulty</option>
+                </select>
+                <label for="order">
+                  Order:
+                </label>
+                <select class="form-select" name="order" id="order">
+                  <option>Ascending</option>
+                  <option>Descending</option>
+                </select>
+              </div>
+            </fieldset>
           </div>
-        </fieldset>
+          <div class="col">
+            <fieldset>
+              <legend>Filter</legend>
+              <div class="mb-3">
+                <label for="season" class="form-label">Season: </label>
+                <select name="season" id="season" class="form-select">
+                  <option>Any</option>
+                  <option>All</option>
+                  <option>Spring</option>
+                  <option>Summer</option>
+                  <option>Autumn</option>
+                  <option>Winter</option>
+                </select>
+                <label for="category" class="form-label">Category: </label>
+                <select name="category" id="category" class="form-select">
+                  <option>Any</option>
+                  <option>Appetizers</option>
+                  <option>Autumn</option>
+                  <option>Beverages</option>
+                  <option>Breakfast</option>
+                  <option>Desserts</option>
+                  <option>Dinner</option>
+                  <option>Lunch</option>
+                  <option>Snacks</option>
+                  <option>Spring</option>
+                  <option>Summer</option>
+                  <option>Winter</option>
+                </select>
+                <label class="form-label" for="ingredients">
+                  Ingredients:
+                </label>
+                <input
+                    class="form-control"
+                    name="ingredients"
+                    id="ingredients"
+                />
+              </div>
+            </fieldset>
+          </div>
+        </div>
       </form>
       <br />
 
