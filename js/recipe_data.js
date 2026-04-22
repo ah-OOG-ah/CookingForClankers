@@ -42,10 +42,10 @@ export class Category {
 }
 
 export class Dietary {
-    static GLUTEN_FREE = "Gluten-Free";
-    static HIGH_PROTEIN = "High-Protein";
-    static VEGAN = "Vegan";
-    static VEGETARIAN = "Vegetarian";
+  static GLUTEN_FREE = "Gluten-Free";
+  static HIGH_PROTEIN = "High-Protein";
+  static VEGAN = "Vegan";
+  static VEGETARIAN = "Vegetarian";
 }
 
 export class Season {
