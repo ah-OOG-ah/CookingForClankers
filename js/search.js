@@ -92,6 +92,7 @@ function updateResults() {
       break;
     }
     case "Prep Time": {
+      results.sort((a, b) => b.prepMinutes - a.prepMinutes);
       break;
     }
     case "Difficulty": {
