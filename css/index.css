@@ -20314,7 +20314,8 @@ body {
   background-color: var(--bs-body-color);
 }
 
-.carousel-control-prev-icon, .carousel-control-next-icon {
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
   background-color: var(--bs-body-color);
   color: var(--bs-body-bg);
 }
