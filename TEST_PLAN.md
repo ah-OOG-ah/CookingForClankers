@@ -38,11 +38,40 @@ The device and browser will be recorded for each subject.
 
 ## Task Scenarios
 
-1. **Find the Details for the Recipe of the Day**
+1. **Recipe of the Day**
+   - **Goal**: Test usability of the Recipe of the Day feature.
+   - **Starting conditions**: Start on the homepage.
+   - **Instructions**: Find the details for the Recipe of the Day.
+   - **Completion condition**: On the Recipe Details page for the recipe of the
+     day.
+
 2. **Search for "Lemon Cheesecake Bars"**
-3. **Add Three Recipes from the Index to Favorites, then Remove them From the Favorites Page**
-4. **Quadruple the Ingredients for a Recipe**
-5. **Leave a Scathing Review on a Recipe**
+   - **Goal**: Test search functionality.
+   - **Starting conditions**: Start on the homepage.
+   - **Instructions**: Use the search bar.
+   - **Completion condition**: On the Recipe Details page for Lemon Cheesecake
+     Bars.
+
+3. **Like and Unlike Recipes**
+   - **Goal**: Test usability of the Favorites functionality.
+   - **Starting conditions**: Start on the homepage.
+   - **Instructions**: Add three recipes from the Index to Favorites, then
+     remove them from the Favorites page.
+   - **Completion condition**: The three recipes you just favorited are no
+     longer favorited.
+
+4. **Recipe Multiplier**
+   - **Goal**: Test usability of the Ingredient Multiplier.
+   - **Starting conditions**: Start on the details page for any recipe.
+   - **Instructions**: Quadruple the ingredients of your recipe.
+   - **Completion condition**: The ingredient quantities are quadrupled.
+
+5. **Scathing Review**
+   - **Goal**: Test usability of the Review feature.
+   - **Starting conditions**: Start on the details page for any recipe.
+   - **Instructions**: Leave a scathing review on this recipe with 2 stars and a
+     nasty comment.
+   - **Completion condition**: The review is added to the reviews card.
 
 ## Metrics to Collect
 
