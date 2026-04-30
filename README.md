@@ -242,7 +242,7 @@ Presentation.
   - [ ] Make sure recipe cards never extend wider than a phone screen - specifically, check Bruschetta with tomato and basil.
   - [ ] Confirm search layout works on mobile.
   - [x] Make search more relaxed.
-  - [ ] Change ingredient multiplier update event.
+  - [x] Change ingredient multiplier update event.
   - [ ] Fix submission button on light mode
   - [ ] Make stars larger and easier to click on mobile
 
