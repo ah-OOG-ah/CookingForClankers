@@ -149,7 +149,7 @@ const tagList = document.getElementById("tagList");
 
 /** @param {string} name */
 function addTag(name) {
-  if (name === " --- ") return;
+  if (name === "---") return;
 
   const tag = document.createElement("span");
   tag.id = `${name}Chip`;
