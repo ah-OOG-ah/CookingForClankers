@@ -1,10 +1,5 @@
 import { initFavorites } from "./favorites.js";
-import {
-  fetchRecipe,
-  fetchRecipeStory,
-  recipeImage,
-  imageSrc,
-} from "./recipe_data.js";
+import { fetchRecipe, fetchRecipeStory, imageSrc } from "./recipe_data.js";
 
 const populateRecipeData = (recipe) => {
   console.debug(recipe);
@@ -153,12 +148,10 @@ function setIngredients(recipe, multiple) {
 
 /** @type HTMLInputElement **/
 const mulInput = document.getElementById("mulInput");
-mulInput.addEventListener("keydown", async (event) => {
-  if (event.key !== "Enter" || !mulInput.checkValidity()) {
-    return;
-  }
-
-  setIngredients(await recipe, mulInput.valueAsNumber);
+mulInput.addEventListener("input", async () => {
+  const raw = mulInput.valueAsNumber
+  const mul = raw <= 0 || Number.isNaN(raw) ? 1 : mulInput.valueAsNumber;
+  setIngredients(await recipe, mul);
 });
 
 const stars = document.querySelectorAll(".star-input");
@@ -180,16 +173,16 @@ setRating(selectedRating);
 stars.forEach((star, i) => {
   const rating = i + 1;
 
-  star.addEventListener("click", (event) => {
+  star.addEventListener("click", () => {
     setRating(rating);
     setStarsFill(rating);
   });
 
-  star.addEventListener("mouseover", (event) => {
+  star.addEventListener("mouseover", () => {
     setStarsFill(rating);
   });
 
-  star.addEventListener("mouseout", (event) => {
+  star.addEventListener("mouseout", () => {
     setStarsFill(selectedRating);
   });
 });
@@ -239,7 +232,7 @@ function updateReviews() {
   reviewContainer.innerHTML = reviews.map(reviewHtml).join("<hr />");
 }
 
-document.getElementById("submitReview").addEventListener("click", (event) => {
+document.getElementById("submitReview").addEventListener("click", () => {
   const commentBox = document.getElementById("reviewComment");
   const comment = commentBox.value;
   addReview(selectedRating, comment);
