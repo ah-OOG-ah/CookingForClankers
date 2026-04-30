@@ -75,8 +75,10 @@ export class Difficulty {
 
 export class Recipe {
   // The following properties come from the JSON files
-  id; // number
-  name; // string
+  /** @type number */
+  id;
+  /** @type string */
+  name;
   /** @type string. See Category for valid values. **/
   category;
   /** @type {string[]} **/
@@ -85,12 +87,16 @@ export class Recipe {
   dietary;
   /** @type string. See Season for valid values. **/
   season;
-  cuisine; // string
-  prep_time; // string
-  difficulty; // string
+  /** @type string */
+  cuisine;
+  /** @type string */
+  prep_time;
+  /** @type string */
+  difficulty;
   /** @type {string[]} **/
   images;
-  steps; // string[]
+  /** @type {string[]} */
+  steps;
 
   // And the next ones are calculated for indexing
   /** @type string **/
