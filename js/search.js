@@ -22,7 +22,7 @@ const tagFilters = new Set();
 /** @type {Fuse<Recipe>} A Fuse index on the recipes, using only the name as a key. **/
 const fuseNamesOnly = new Fuse(ALL_RECIPES.values().toArray(), {
   keys: ["name"],
-  threshold: 0.2,
+  threshold: 0.3,
   useTokenSearch: true,
 });
 // noinspection JSValidateTypes The proper types are sadly only visible with Typescript.
