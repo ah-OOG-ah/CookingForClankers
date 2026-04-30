@@ -237,14 +237,14 @@ tests.
 Presentation.
 
 - [ ] (List of your identified fixes/improvements.)
-  - Vertically shrink carousel on mobile, it shouldn't take more than a full screen.
-  - Make sure the hamburger menu and light/dark theme button work properly on mobile.
-  - Make sure recipe cards never extend wider than a phone screen - specifically, check Bruschetta with tomato and basil.
-  - Confirm search layout works on mobile.
-  - Make search more relaxed.
-  - Change ingredient multiplier update event.
-  - Fix submission button on light mode
-  - Make stars larger and easier to click on mobile
+  - [ ] Vertically shrink carousel on mobile, it shouldn't take more than a full screen.
+  - [ ] Make sure the hamburger menu and light/dark theme button work properly on mobile.
+  - [ ] Make sure recipe cards never extend wider than a phone screen - specifically, check Bruschetta with tomato and basil.
+  - [ ] Confirm search layout works on mobile.
+  - [ ] Make search more relaxed.
+  - [ ] Change ingredient multiplier update event.
+  - [ ] Fix submission button on light mode
+  - [ ] Make stars larger and easier to click on mobile
 
 ## Credits
 
