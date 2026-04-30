@@ -142,6 +142,37 @@ function updatePage() {
   initFavorites();
 }
 
+/** @type HTMLSelectElement */
+const tagSelect = document.getElementById("tags");
+/** @type HTMLDivElement */
+const tagList = document.getElementById("tagList");
+
+/** @param {string} name */
+function addTag(name) {
+  if (name === " --- ") return;
+
+  const tag = document.createElement("span");
+  tag.id = `${name}Chip`;
+  tag.className = `chip m-1 ${name}`;
+  tag.innerText = `${name}`;
+
+  const closeBtn = document.createElement("button");
+  closeBtn.className = "btn-close";
+  closeBtn.onclick = () => removeTag(name);
+  tag.appendChild(closeBtn);
+
+  tagList.appendChild(tag);
+}
+
+/** @param {string} name */
+function removeTag(name) {
+  document.getElementById(`${name}Chip`).remove();
+}
+
+/**
+ * Everything below runs when the page loads.
+ */
+
 await fetchAllStories();
 loadMore();
 updatePage();
@@ -152,3 +183,4 @@ document.getElementById("loadMore").addEventListener("click", () => {
 
 filterForm.addEventListener("input", updateResults);
 searchInput.addEventListener("input", updateResults);
+tagSelect.addEventListener("input", () => addTag(tagSelect.value));
