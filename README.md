@@ -219,7 +219,7 @@ tests.
 - [] Recipe submission form
 - [x] Cooking timer _AD_
 - [x] User ratings and reviews _JE_
-- [] Dynamic recipe filter and sorting
+- [x] Dynamic recipe filter and sorting _DA_
 - [] Animations for recipe actions (partially done!)
 - [x] Recipe of the day feature _JE_
 
