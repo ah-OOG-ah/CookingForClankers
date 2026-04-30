@@ -214,7 +214,7 @@ tests.
 
 - [x] Recipe sharing links _DA_
 - [x] Ingredient multiplication _DA_
-- [] Advanced dynamic search
+- [x] Advanced dynamic search _DA_
 - [x] Theme switcher _JE_
 - [] Recipe submission form
 - [x] Cooking timer _AD_
@@ -223,12 +223,12 @@ tests.
 - [] Animations for recipe actions (partially done!)
 - [x] Recipe of the day feature _JE_
 
-### 🔴 Task 9: Usability Testing
+### 🟡 Task 9: Usability Testing
 
 **Goal**: Refine the website based on user feedback.
 
-- [ ] Conduct UX tests with peers or target users.
-- [ ] Collect feedback on navigation, features, and design.
+- [x] Conduct UX tests with peers or target users.
+- [x] Collect feedback on navigation, features, and design.
 - [ ] Implement changes to address usability issues.
 
 ### 🔴 Task 10: Implement Final Fixes
