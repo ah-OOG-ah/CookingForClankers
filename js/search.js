@@ -162,11 +162,17 @@ function addTag(name) {
   tag.appendChild(closeBtn);
 
   tagList.appendChild(tag);
+  // Make sure the user can't double-select a tag
+  const option = document.getElementById(`opt${name}`);
+  option.hidden = true;
+  tagSelect.selectedIndex = 0;
 }
 
 /** @param {string} name */
 function removeTag(name) {
   document.getElementById(`${name}Chip`).remove();
+  const option = document.getElementById(`opt${name}`);
+  option.hidden = false;
 }
 
 /**
