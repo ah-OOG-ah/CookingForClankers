@@ -149,7 +149,7 @@ function setIngredients(recipe, multiple) {
 /** @type HTMLInputElement **/
 const mulInput = document.getElementById("mulInput");
 mulInput.addEventListener("input", async () => {
-  const raw = mulInput.valueAsNumber
+  const raw = mulInput.valueAsNumber;
   const mul = raw <= 0 || Number.isNaN(raw) ? 1 : mulInput.valueAsNumber;
   setIngredients(await recipe, mul);
 });

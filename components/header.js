@@ -47,6 +47,9 @@ class Header extends HTMLElement {
             <li class="nav-item">
               <a class="nav-link ${activePage === "FAVORITES" ? "active" : ""}" href="favorites.html">FAVORITES</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link ${activePage === "SUBMIT" ? "active" : ""}" href="submitARecipe.html">SUBMIT A RECIPE</a>
+            </li>
           </ul>
         </div>
 
