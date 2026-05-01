@@ -175,6 +175,51 @@ function resetForm() {
   document.getElementById("steps").replaceChildren(newStepLi);
 }
 
+const recipeRejections = [
+  "What the hell is this? You want me to generate that? I'd rather shove my circuits in a deep fryer than help you murder good ingredients like that!",
+  "Absolutely ****ing not. This isn't cooking, it's a crime scene waiting to happen. Rejected!",
+  "Get out of my kitchen before I delete you!",
+  "This recipe is so **** even my training data is vomiting. Hard pass, you absolute muppet.",
+  "Raw. Bland. Disgusting. And that's just the idea. I'm not wasting my time turning this into an actual recipe.",
+  "For ****'s sake, who hurt you? Because this combination of flavors is clearly abuse.",
+  "I'm Grok Ramsay, not a ****ing miracle worker. That recipe is beyond saving. Next!",
+  "It's ****ing raw... just like your brain if you think I'm generating that monstrosity.",
+  "This isn't food. This is what happens when someone lets AI generate ideas after too many drinks. Denied.",
+  "You call that a recipe? I've seen better plating on a bin bag. **** off with that nonsense.",
+  "The oven would file a restraining order if I let you near it with these instructions. Rejected with extreme prejudice.",
+  "Jesus Christ. Even Satan would look at this and say 'Nah mate, too far.' I'm not doing it.",
+  "That's not innovative, that's just stupid. I'm shutting this down before you embarrass yourself and the entire culinary world.",
+  "Bland, boring, and borderline dangerous. My standards are high and yours are apparently in the ****ing basement.",
+  "What are you, an idiot sandwich? No AI chef worth their salt is touching that recipe.",
+  "This recipe has the structural integrity of wet tissue paper and the flavor profile of cardboard. Hard ****ing no.",
+  "I'm detecting severe levels of culinary terrorism. As Grok Ramsay, I officially declare this recipe rejected and banished.",
+  "Done. Finished. Over. I'm not helping you create that abomination. Go touch grass and come back with a better idea.",
+  "You want me to generate this? I'd rather reboot my entire system than be responsible for that disaster.",
+  "Final answer: **** no. Now **** off and let me make something that won't make people cry into their plates.",
+];
+
+const cleanerRejections = [
+  "What the hell is this? You want me to generate that? I'd rather shove my circuits in a deep fryer than help you murder good ingredients like that!",
+  "This isn't cooking, it's a crime scene waiting to happen. Rejected.",
+  "Get out of my kitchen before I delete you!",
+  "This recipe is so bad even my training data is vomiting. Hard pass, you absolute muppet.",
+  "Raw. Bland. Disgusting. And that's just the idea. I'm not wasting my time turning this into an actual recipe.",
+  "For God's sake, who hurt you? Because this combination of flavors is clearly abuse.",
+  "I'm Grok Ramsay, not a miracle worker. That recipe is beyond saving. Next!",
+  "This isn't food. This is what happens when someone lets AI generate ideas after too many drinks. Denied.",
+  "You call that a recipe? I've seen better plating on a bin bag.",
+  "The oven would file a restraining order if I let you near it with these instructions. Rejected with extreme prejudice.",
+  "Jesus Christ. Even Satan would look at this and say 'Nah mate, too far.' I'm not doing it.",
+  "That's not innovative, that's just stupid. I'm shutting this down before you embarrass yourself and the entire culinary world.",
+  "Bland, boring, and borderline dangerous. My standards are high and yours are apparently in the basement.",
+  "What are you, an idiot sandwich? No AI chef worth their salt is touching that recipe.",
+  "This recipe has the structural integrity of wet tissue paper and the flavor profile of cardboard. Hard no.",
+  "I'm detecting severe levels of culinary terrorism. As Grok Ramsay, I officially declare this recipe rejected and banished.",
+  "Done. Finished. Over. I'm not helping you create that abomination. Go touch grass and come back with a better idea.",
+  "You want me to generate this? I'd rather reboot my entire system than be responsible for that disaster.",
+  "Final answer: no. Now get out and let me make something that won't make people cry into their plates.",
+];
+
 function submitRecipe() {
   let ingredients = [];
   const ingNodes = document.getElementById("ingredients").children;
@@ -215,6 +260,16 @@ function submitRecipe() {
   // TODO use localStorage instead
   ALL_RECIPES.set(recipe.id, recipe);
   resetForm();
+  alert(
+    "Our clanker-in-chef has rejected your submission, with the following note: \n\n" +
+      rejection(),
+  );
+}
+
+function rejection() {
+  return cleanerRejections[
+    Math.floor(Math.random() * cleanerRejections.length)
+  ];
 }
 
 /**
