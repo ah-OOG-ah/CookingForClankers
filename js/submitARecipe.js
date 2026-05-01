@@ -166,6 +166,15 @@ function removeStep(step) {
   document.getElementById(`step${step}Li`).remove();
 }
 
+function resetForm() {
+  document.getElementById("ingredients").replaceChildren();
+  let oldTags = tags.values().toArray();
+  for (const tag of oldTags) {
+    removeTag(tag);
+  }
+  document.getElementById("steps").replaceChildren(newStepLi);
+}
+
 function submitRecipe() {
   let ingredients = [];
   const ingNodes = document.getElementById("ingredients").children;
@@ -203,7 +212,9 @@ function submitRecipe() {
     steps: steps,
   });
 
+  // TODO use localStorage instead
   ALL_RECIPES.set(recipe.id, recipe);
+  resetForm();
 }
 
 /**
