@@ -18,12 +18,99 @@
       defer
     ></script>
     <script src="js/theme-toggle.js" defer></script>
+    <script src="js/submitARecipe.js" defer></script>
   </head>
   <body>
     <header-component active-page="SUBMIT"></header-component>
 
     <main class="container">
-      <form id="form"></form>
+      <form id="form">
+        <div class="row mb-2">
+          <label for="name" class="col-sm-3 col-form-label">Recipe Name:</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" name="name" id="name" />
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <label for="category" class="col-sm-3 col-form-label"
+            >Category:</label
+          >
+          <div class="col-sm-9">
+            <select class="form-select" name="category" id="category">
+              <option>Appetizers</option>
+              <option>Autumn</option>
+              <option>Beverages</option>
+              <option>Breakfast</option>
+              <option>Desserts</option>
+              <option>Dinner</option>
+              <option>Lunch</option>
+              <option>Snacks</option>
+              <option>Spring</option>
+              <option>Summer</option>
+              <option>Winter</option>
+            </select>
+          </div>
+        </div>
+
+        <fieldset>
+          <label class="form-label">Ingredients:</label>
+          <div class="col" id="ingredients"></div>
+          <div class="row mb-2">
+            <div class="col-sm-9 input-group">
+              <label class="visually-hidden" for="newIngAmt">Amount</label>
+              <input
+                type="number"
+                class="form-control"
+                name="newIngAmt"
+                id="newIngAmt"
+              />
+              <label class="visually-hidden" for="newIngredient"
+                >New Ingredient</label
+              >
+              <input
+                type="text"
+                class="w-50 form-control"
+                name="newIngredient"
+                id="newIngredient"
+              />
+              <button
+                class="btn btn-primary"
+                formaction=""
+                type="button"
+                onclick="addIngredient()"
+              >
+                ADD
+              </button>
+            </div>
+          </div>
+        </fieldset>
+
+        <ul style="list-style-type: none">
+          <li></li>
+        </ul>
+
+        <!--
+         /** @type number */
+  id;
+  /** @type {string[]} **/
+  ingredients;
+  /** @type {string[]} */
+  dietary;
+  /** @type string. See Season for valid values. **/
+  season;
+  /** @type string */
+  cuisine;
+  /** @type string */
+  prep_time;
+  /** @type string */
+  difficulty;
+  /** @type {string[]} **/
+  images;
+  /** @type {string[]} */
+  steps;
+         -->
+      </form>
     </main>
 
     <footer-component></footer-component>
