@@ -243,8 +243,9 @@ Presentation.
   - [x] Confirm search layout works on mobile. _JE_
   - [x] Make search more relaxed. _DA_
   - [x] Change ingredient multiplier update event. _DA_
-  - [ ] Fix submission and share button on light mode_AJ_in progress
-  - [ ] Make stars larger and easier to click on mobile_AJ_in progress
+  - [x] Fix submission and share button on light mode _JE_
+  - [x] Make stars larger and easier to click on mobile _AJ_
+  - [ ] Timer makes recipe page layout funky on mobile _JE_
 
 ## Credits
 
