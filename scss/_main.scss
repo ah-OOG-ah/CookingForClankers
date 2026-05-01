@@ -82,10 +82,13 @@ recipe-card .card {
   }
 }
 
-.dietary-chip {
+.chip {
   border-radius: 99999px;
   padding: 0.25em 0.5em;
   font-size: small;
+
+  border: 1px solid #424549;
+  background-color: #42454910;
 
   &.Vegetarian {
     border: 1px solid #00ab4d;
@@ -108,22 +111,6 @@ recipe-card .card {
   }
 }
 
-.bi-flower2 {
-  color: #7ce100;
-}
-
-.bi-sun-fill {
-  color: #ffea00;
-}
-
-.bi-leaf-fill {
-  color: #ff8800;
-}
-
-.bi-snow {
-  color: #00eeff;
-}
-
 html {
   scroll-behavior: smooth;
   // always take up 100% of the screen
@@ -135,4 +122,22 @@ body {
   min-height: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto;
+}
+
+.timer-container {
+  background: #212529;
+  border-color: #495057;
+  transition: all 0.2s ease;
+
+  .timer-display {
+    font-family: "SG Mono", monospace;
+    letter-spacing: 4px;
+  }
+
+  .timer-open-btn {
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: rotate(180deg);
+    }
+  }
 }

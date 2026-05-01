@@ -25,14 +25,66 @@ const RECIPE_FILES = [
 
 const RECIPE_STORIES = "All_recipe_stories.json";
 
+export const NUM_RECIPES = 79;
+
+export class Category {
+  static APPETIZERS = "Appetizers";
+  static AUTUMN = "Autumn";
+  static BEVERAGES = "Beverages";
+  static BREAKFAST = "Breakfast";
+  static DESSERTS = "Desserts";
+  static DINNER = "Dinner";
+  static LUNCH = "Lunch";
+  static SNACKS = "Snacks";
+  static SPRING = "Spring";
+  static SUMMER = "Summer";
+  static WINTER = "Winter";
+}
+
+export class Dietary {
+  static GLUTEN_FREE = "Gluten-Free";
+  static HIGH_PROTEIN = "High-Protein";
+  static VEGAN = "Vegan";
+  static VEGETARIAN = "Vegetarian";
+}
+
+export class Season {
+  static SPRING = "Spring";
+  static SUMMER = "Summer";
+  static AUTUMN = "Autumn";
+  static WINTER = "Winter";
+  static ALL = "All";
+}
+
+export class Difficulty {
+  static MODERATE = "Moderate";
+  static EASY = "Easy";
+
+  /** @param {string} diff */
+  static toLevel(diff) {
+    switch (diff) {
+      case Difficulty.EASY:
+        return 0;
+      case Difficulty.MODERATE:
+        return 1;
+      default:
+        throw new Error(diff + " is not a difficulty!");
+    }
+  }
+}
+
 export class Recipe {
+  // The following properties come from the JSON files
   id; // number
   name; // string
-  category; // string
+  /** @type string. See Category for valid values. **/
+  category;
   /** @type {string[]} **/
   ingredients;
-  dietary; // string[]
-  season; // string
+  /** @type {string[]} */
+  dietary;
+  /** @type string. See Season for valid values. **/
+  season;
   cuisine; // string
   prep_time; // string
   difficulty; // string
@@ -40,8 +92,40 @@ export class Recipe {
   images;
   steps; // string[]
 
+  // And the next ones are calculated for indexing
+  /** @type string **/
+  ingredientString;
+  /** @type number **/
+  prepMinutes;
+  /** @type number **/
+  difficultyLevel;
+
   constructor(obj) {
     obj && Object.assign(this, obj);
+    this.ingredientString = this.ingredients.join(" ");
+    this.prepMinutes = this.#getPrepMinutes(this.prep_time);
+    this.difficultyLevel = Difficulty.toLevel(this.difficulty);
+  }
+
+  /**
+   * This is how we have to get the prep time, because we can't have nice things.
+   * @param {string} time
+   * @return number
+   */
+  #getPrepMinutes(time) {
+    let match = time.match(/^(\d+) min$/);
+    if (match !== null) return Number.parseInt(match[1]);
+
+    match = time.match(/^(\d+) min \+ overnight$/);
+    if (match !== null) return Number.parseInt(match[1]) + 12 * 60;
+
+    match = time.match(/^(\d+) hr.*$/);
+    if (match !== null) return Number.parseInt(match[1]) * 60;
+
+    match = time.match(/^(\d+) hour.*$/);
+    if (match !== null) return Number.parseInt(match[1]) * 60;
+
+    throw new Error("Invalid prep_time '" + time + "'!");
   }
 }
 
@@ -176,7 +260,11 @@ ${await response.text()}`,
 }
 
 export function recipeImage(recipe) {
-  return `${DATA_PATH}/images/${recipe.images[0]}`;
+  return imageSrc(recipe.images[0]);
+}
+
+export function imageSrc(image) {
+  return `${DATA_PATH}/images/${image}`;
 }
 
 /** @param {string} story **/

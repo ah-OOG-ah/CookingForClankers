@@ -62,6 +62,9 @@ class Header extends HTMLElement {
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
+      <button id="theme-toggle" aria-label="Toggle dark mode" class="btn btn-secondary">
+        <i id="theme-icon" class="bi bi-sun-fill"></i>
+      </button>
     </nav>
         `;
   }

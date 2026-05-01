@@ -86,6 +86,17 @@ Total Points From Standard Requirements = 80
 
 ## Optional Features
 
+- [x] Recipe sharing links _DA_
+- [x] Ingredient multiplication _DA_
+- [x] Advanced dynamic search _DA_
+- [x] Theme switcher_JE
+- [] Recipe submission form
+- [] Cooking timer_AD
+- [] User ratings and reviews
+- [] Dynamic recipe filter and sorting
+- [] Animations for recipe actions (partially done!)
+- [] Recipe of the day feature
+
 ## Tasks
 
 ### 🟢 Task 0: System Requirements & Schedule
@@ -203,16 +214,21 @@ tests.
 
 - [x] Recipe sharing links _DA_
 - [x] Ingredient multiplication _DA_
-- [ ] Optional feature 3
-- [ ] Optional feature 4
-- [ ] ...
+- [x] Advanced dynamic search _DA_
+- [x] Theme switcher _JE_
+- [] Recipe submission form
+- [x] Cooking timer _AD_
+- [x] User ratings and reviews _JE_
+- [] Dynamic recipe filter and sorting
+- [] Animations for recipe actions (partially done!)
+- [x] Recipe of the day feature _JE_
 
-### 🔴 Task 9: Usability Testing
+### 🟡 Task 9: Usability Testing
 
 **Goal**: Refine the website based on user feedback.
 
-- [ ] Conduct UX tests with peers or target users.
-- [ ] Collect feedback on navigation, features, and design.
+- [x] Conduct UX tests with peers or target users.
+- [x] Collect feedback on navigation, features, and design.
 - [ ] Implement changes to address usability issues.
 
 ### 🔴 Task 10: Implement Final Fixes
@@ -221,6 +237,14 @@ tests.
 Presentation.
 
 - [ ] (List of your identified fixes/improvements.)
+  - [ ] Vertically shrink carousel on mobile, it shouldn't take more than a full screen.
+  - [ ] Make sure the hamburger menu and light/dark theme button work properly on mobile.
+  - [ ] Make sure recipe cards never extend wider than a phone screen - specifically, check Bruschetta with tomato and basil.
+  - [ ] Confirm search layout works on mobile.
+  - [ ] Make search more relaxed.
+  - [ ] Change ingredient multiplier update event.
+  - [ ] Fix submission button on light mode
+  - [ ] Make stars larger and easier to click on mobile
 
 ## Credits
 

@@ -20315,4 +20315,13 @@ body {
   transform: rotate(180deg);
 }
 
-/*# sourceMappingURL=generic.css.map */
+.recipe-detail-carousel-img {
+  max-height: 600px;
+}
+
+.bi-star,
+.bi-star-fill {
+  color: #ffc107;
+}
+
+/*# sourceMappingURL=recipe.css.map */

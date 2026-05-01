@@ -8,7 +8,7 @@
     />
     <title>Cooking for Clankers</title>
 
-    <link rel="stylesheet" href="css/generic.css" />
+    <link rel="stylesheet" href="css/recipe.css" />
     <script src="components/header.js"></script>
     <script src="components/footer.js"></script>
     <script
@@ -17,65 +17,105 @@
       crossorigin="anonymous"
       defer
     ></script>
+    <script src="js/theme-toggle.js" defer></script>
     <script type="module" src="js/recipe_page.js" defer></script>
+    <script type="module" src="js/recipe-timer.js" defer></script>
   </head>
   <body>
     <header-component></header-component>
 
     <main class="container">
       <div class="card mb-3">
-        <div class="row">
-          <div class="col-4 recipe-img-final"></div>
-          <div class="col-8">
-            <div class="card-body">
-              <div class="d-flex justify-content-between">
-                <h3 class="card-title recipe-name">Loading...</h3>
-                <div>
-                  <button id="shareBtn" class="btn btn-outline-light">
-                    Share
-                  </button>
-                  <i class="favorite-btn" role="button"></i>
-                </div>
-              </div>
-              <p class="recipe-story"></p>
-              <p class="card-text">
-                Category: <span class="recipe-category"></span>
-              </p>
-              <p class="card-text">Dietary</p>
-              <ul class="recipe-dietary"></ul>
-              <p class="card-text">
-                Season: <span class="recipe-season"></span>
-              </p>
-              <p class="card-text">
-                Cuisine: <span class="recipe-cuisine"></span>
-              </p>
-              <p class="card-text">
-                Prep Time: <span class="recipe-prep-time"></span>
-              </p>
-              <p class="card-text">
-                Difficulty: <span class="recipe-difficulty"></span>
-              </p>
-              <h6 class="card-text">
-                Ingredients
-                <label>
-                  <!-- TODO does this need a button to be obvious? -->
-                  (multiply by
-                  <input
-                    id="mulInput"
-                    required
-                    type="number"
-                    value="1"
-                  /> </label
+        <div
+          id="imageCarousel"
+          class="carousel slide"
+          data-bs-ride="true"
+        ></div>
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-start gap-3">
+            <div class="mb-3 flex-grow-1">
+              <h3 class="card-title recipe-name">Loading...</h3>
+              <h6 class="card-subtitle text-body-secondary d-inline">
+                <span class="recipe-cuisine"></span> -
+                <span class="recipe-difficulty"></span> (<span
+                  class="recipe-prep-time"
+                ></span
                 >)
               </h6>
-              <ul class="recipe-ingredients"></ul>
-              <h6 class="card-text">Steps</h6>
-              <ol class="recipe-steps"></ol>
+              <span class="chip recipe-season"></span>
             </div>
+
+            <recipe-timer id="recipeTimer" recipe-id=""></recipe-timer>
+
+            <div>
+              <button id="shareBtn" class="btn btn-outline-light">Share</button>
+              <i class="favorite-btn" role="button"></i>
+            </div>
+          </div>
+
+          <p class="recipe-story"></p>
+          <p class="card-text">
+            Category: <span class="recipe-category"></span>
+          </p>
+          <div class="d-flex gap-2">
+            <span class="card-text">Dietary:</span>
+            <div class="recipe-dietary d-flex flex-wrap gap-2"></div>
+          </div>
+          <h6 class="card-text">
+            Ingredients
+            <label>
+              <!-- TODO does this need a button to be obvious? -->
+              (multiply by
+              <input id="mulInput" required type="number" value="1" /> </label
+            >)
+          </h6>
+          <ul class="recipe-ingredients"></ul>
+          <h6 class="card-text">Steps</h6>
+          <ol class="recipe-steps"></ol>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h3>Leave a review!</h3>
+          <div>
+            <i class="star-input bi bi-star-fill"></i>
+            <i class="star-input bi bi-star-fill"></i>
+            <i class="star-input bi bi-star-fill"></i>
+            <i class="star-input bi bi-star-fill"></i>
+            <i class="star-input bi bi-star-fill"></i>
+            <span>Your rating: <span id="selectedRating"></span>/5</span>
+          </div>
+          <textarea id="reviewComment" class="form-control my-2"></textarea>
+          <div class="text-center">
+            <button id="submitReview" class="btn btn-outline-light">
+              Submit Review
+            </button>
           </div>
         </div>
       </div>
+      <div class="card">
+        <div class="card-body">
+          <h3>Reviews</h3>
+          <p>Average rating: <span id="averageRating"></span>/5</p>
+          <div id="reviews"></div>
+        </div>
+      </div>
     </main>
+
+    <div id="shareDialog" class="modal text-center" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <p>Copy this link!</p>
+            <code id="linkText" class="text-light"></code>
+            <br />
+            <button class="btn btn-primary mt-3" data-bs-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <footer-component></footer-component>
   </body>
