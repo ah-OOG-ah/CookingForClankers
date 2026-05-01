@@ -199,13 +199,13 @@ Total Points From Standard Requirements = 80
 - [ ] Write JavaScript to dynamically populate recipe cards on the homepage.
 - [x] Implement a "Load More" button for paginated recipe listings. _DA_
 
-### 🟡 Task 7: Search Functionality
+### 🟢 Task 7: Search Functionality
 
 **Goal**: Enable users to search for recipes.
 
 - [x] Add a search bar to the website. _DA_
 - [x] Write JavaScript to filter recipes based on user input. _DA_
-- [ ] Highlight the search results and ensure usability.
+- [x] Highlight the search results and ensure usability. _DA_
 
 ### 🟡 Task 8: Optional Features (longer task)
 
@@ -216,27 +216,27 @@ tests.
 - [x] Ingredient multiplication _DA_
 - [x] Advanced dynamic search _DA_
 - [x] Theme switcher _JE_
-- [] Recipe submission form
+- [x] Recipe submission form _DA_
 - [x] Cooking timer _AD_
 - [x] User ratings and reviews _JE_
 - [x] Dynamic recipe filter and sorting _DA_
 - [] Animations for recipe actions (partially done!)
 - [x] Recipe of the day feature _JE_
 
-### 🟡 Task 9: Usability Testing
+### 🟢 Task 9: Usability Testing
 
 **Goal**: Refine the website based on user feedback.
 
 - [x] Conduct UX tests with peers or target users.
 - [x] Collect feedback on navigation, features, and design.
-- [ ] Implement changes to address usability issues.
+- [x] Implement changes to address usability issues.
 
-### 🔴 Task 10: Implement Final Fixes
+### 🟢 Task 10: Implement Final Fixes
 
 **Goal**: Implement the fixes/improvements identified in your UX/UI
 Presentation.
 
-- [ ] (List of your identified fixes/improvements.)
+- [x] (List of your identified fixes/improvements.)
   - [x] Vertically shrink carousel on mobile, it shouldn't take more than a full screen. _JE_
   - [x] Make sure the hamburger menu and light/dark theme button work properly on mobile. _JE_
   - [x] Make sure recipe cards never extend wider than a phone screen - specifically, check Bruschetta with tomato and basil. _JE_
@@ -245,7 +245,7 @@ Presentation.
   - [x] Change ingredient multiplier update event. _DA_
   - [x] Fix submission and share button on light mode _JE_
   - [x] Make stars larger and easier to click on mobile _AJ_
-  - [ ] Timer makes recipe page layout funky on mobile _JE_
+  - [x] Timer makes recipe page layout funky on mobile _JE_
 
 ## Credits
 
