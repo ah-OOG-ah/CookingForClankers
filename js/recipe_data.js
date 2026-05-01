@@ -56,6 +56,11 @@ export class Season {
   static ALL = "All";
 }
 
+export class Cuisine {
+  /** @type {Set<string>} */
+  static VALUES = new Set();
+}
+
 export class Difficulty {
   static MODERATE = "Moderate";
   static EASY = "Easy";
@@ -108,6 +113,9 @@ export class Recipe {
 
   constructor(obj) {
     obj && Object.assign(this, obj);
+
+    Cuisine.VALUES.add(this.cuisine);
+
     this.ingredientString = this.ingredients.join(" ");
     this.prepMinutes = this.#getPrepMinutes(this.prep_time);
     this.difficultyLevel = Difficulty.toLevel(this.difficulty);

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/generic.css" />
     <script src="components/header.js"></script>
     <script src="components/footer.js"></script>
+    <!--    <script src="js/recipe_data.js" type="module"></script>-->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
@@ -18,7 +19,7 @@
       defer
     ></script>
     <script src="js/theme-toggle.js" defer></script>
-    <script src="js/submitARecipe.js" defer></script>
+    <script type="module" src="js/submitARecipe.js"></script>
   </head>
   <body>
     <header-component active-page="SUBMIT"></header-component>
@@ -113,13 +114,25 @@
             </select>
           </div>
         </div>
+
+        <div class="row mb-2">
+          <label for="cuisine" class="col-sm-3 col-form-label">
+            Cuisine:
+          </label>
+          <div class="col-sm-9">
+            <input
+              class="form-control"
+              type="text"
+              list="cuisineList"
+              name="cuisine"
+              id="cuisine"
+            />
+            <datalist id="cuisineList"> </datalist>
+          </div>
+        </div>
         <!--
          /** @type number */
   id;
-  /** @type string. See Season for valid values. **/
-  season;
-  /** @type string */
-  cuisine;
   /** @type string */
   prep_time;
   /** @type string */

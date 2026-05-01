@@ -1,3 +1,5 @@
+import { Cuisine, fetchAllRecipes } from "./recipe_data.js";
+
 let nextId = 0xffff;
 let ingId = 1;
 
@@ -92,6 +94,19 @@ function removeTag(name) {
   option.hidden = false;
 }
 
+const cuisineList = document.getElementById("cuisineList");
+async function reloadCuisines() {
+  // Needed to ensure that cuisines are populated
+  await fetchAllRecipes();
+
+  cuisineList.replaceChildren();
+  for (const cuisine of Cuisine.VALUES.values().toArray().sort()) {
+    const opt = document.createElement("option");
+    opt.innerText = cuisine;
+    cuisineList.appendChild(opt);
+  }
+}
+
 /**
  * Everything below runs immediately on page load.
  */
@@ -99,3 +114,4 @@ document
   .getElementById("addIngredientBtn")
   .addEventListener("click", addIngredient);
 tagSelect.addEventListener("input", () => addTag(tagSelect.value));
+await reloadCuisines();
