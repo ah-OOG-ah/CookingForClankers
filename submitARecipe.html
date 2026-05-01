@@ -86,15 +86,19 @@
           </div>
         </fieldset>
 
-        <label class="form-label" for="tags">Tags: </label>
-        <select class="form-select" name="tags" id="tags">
-          <option selected>---</option>
-          <option id="optGluten-Free">Gluten-Free</option>
-          <option id="optHigh-Protein">High-Protein</option>
-          <option id="optVegan">Vegan</option>
-          <option id="optVegetarian">Vegetarian</option>
-        </select>
-        <div id="tagList" class="p-2"></div>
+        <div class="row">
+          <label class="col-sm-3 col-form-label form-label" for="tags">Tags: </label>
+          <div class="col-sm-9">
+            <select class="form-select" name="tags" id="tags">
+              <option selected>---</option>
+              <option id="optGluten-Free">Gluten-Free</option>
+              <option id="optHigh-Protein">High-Protein</option>
+              <option id="optVegan">Vegan</option>
+              <option id="optVegetarian">Vegetarian</option>
+            </select>
+          </div>
+        </div>
+        <div id="tagList" class="mb-2"></div>
 
         <div class="row mb-2">
           <label for="season" class="col-sm-3 col-form-label"> Season: </label>
