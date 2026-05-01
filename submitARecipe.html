@@ -130,11 +130,23 @@
             <datalist id="cuisineList"> </datalist>
           </div>
         </div>
+
+        <div class="row mb-2">
+          <label for="prepTime" class="col-sm-3 col-form-label">
+            Prep Time (minutes):
+          </label>
+          <div class="col-sm-9">
+            <input
+              class="form-control"
+              type="number"
+              name="prepTime"
+              id="prepTime"
+            />
+          </div>
+        </div>
         <!--
          /** @type number */
   id;
-  /** @type string */
-  prep_time;
   /** @type string */
   difficulty;
   /** @type {string[]} **/
