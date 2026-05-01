@@ -58,3 +58,44 @@ function addIngredient() {
 function removeIngredient(id) {
   document.getElementById(`ingRow${id}`).remove();
 }
+
+/** @type HTMLSelectElement */
+const tagSelect = document.getElementById("tags");
+/** @type HTMLDivElement */
+const tagList = document.getElementById("tagList");
+
+/** @param {string} name */
+function addTag(name) {
+  if (name === "---") return;
+
+  const tag = document.createElement("span");
+  tag.id = `${name}Chip`;
+  tag.className = `chip m-1 ${name}`;
+  tag.innerText = `${name}`;
+
+  const closeBtn = document.createElement("button");
+  closeBtn.className = "btn-close";
+  closeBtn.onclick = () => removeTag(name);
+  tag.appendChild(closeBtn);
+
+  tagList.appendChild(tag);
+  // Make sure the user can't double-select a tag
+  const option = document.getElementById(`opt${name}`);
+  option.hidden = true;
+  tagSelect.selectedIndex = 0;
+}
+
+/** @param {string} name */
+function removeTag(name) {
+  document.getElementById(`${name}Chip`).remove();
+  const option = document.getElementById(`opt${name}`);
+  option.hidden = false;
+}
+
+/**
+ * Everything below runs immediately on page load.
+ */
+document
+  .getElementById("addIngredientBtn")
+  .addEventListener("click", addIngredient);
+tagSelect.addEventListener("input", () => addTag(tagSelect.value));

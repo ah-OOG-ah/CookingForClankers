@@ -33,9 +33,9 @@
         </div>
 
         <div class="row mb-2">
-          <label for="category" class="col-sm-3 col-form-label"
-            >Category:</label
-          >
+          <label for="category" class="col-sm-3 col-form-label">
+            Category:
+          </label>
           <div class="col-sm-9">
             <select class="form-select" name="category" id="category">
               <option>Appetizers</option>
@@ -65,9 +65,9 @@
                 name="newIngAmt"
                 id="newIngAmt"
               />
-              <label class="visually-hidden" for="newIngredient"
-                >New Ingredient</label
-              >
+              <label class="visually-hidden" for="newIngredient">
+                New Ingredient
+              </label>
               <input
                 type="text"
                 class="w-50 form-control"
@@ -78,7 +78,7 @@
                 class="btn btn-primary"
                 formaction=""
                 type="button"
-                onclick="addIngredient()"
+                id="addIngredientBtn"
               >
                 ADD
               </button>
@@ -86,17 +86,18 @@
           </div>
         </fieldset>
 
-        <ul style="list-style-type: none">
-          <li></li>
-        </ul>
-
+        <label class="form-label" for="tags">Tags: </label>
+        <select class="form-select" name="tags" id="tags">
+          <option selected>---</option>
+          <option id="optGluten-Free">Gluten-Free</option>
+          <option id="optHigh-Protein">High-Protein</option>
+          <option id="optVegan">Vegan</option>
+          <option id="optVegetarian">Vegetarian</option>
+        </select>
+        <div id="tagList" class="p-2"></div>
         <!--
          /** @type number */
   id;
-  /** @type {string[]} **/
-  ingredients;
-  /** @type {string[]} */
-  dietary;
   /** @type string. See Season for valid values. **/
   season;
   /** @type string */
