@@ -1,4 +1,9 @@
-import { Cuisine, fetchAllRecipes } from "./recipe_data.js";
+import {
+  ALL_RECIPES,
+  Cuisine,
+  fetchAllRecipes,
+  Recipe,
+} from "./recipe_data.js";
 
 let nextRecipeId = 0xffff;
 let ingId = 1;
@@ -67,6 +72,9 @@ const tagSelect = document.getElementById("tags");
 /** @type HTMLDivElement */
 const tagList = document.getElementById("tagList");
 
+/** @type {Set<string>} */
+let tags = new Set();
+
 /** @param {string} name */
 function addTag(name) {
   if (name === "---") return;
@@ -82,6 +90,7 @@ function addTag(name) {
   tag.appendChild(closeBtn);
 
   tagList.appendChild(tag);
+  tags.add(name);
   // Make sure the user can't double-select a tag
   const option = document.getElementById(`opt${name}`);
   option.hidden = true;
@@ -91,6 +100,7 @@ function addTag(name) {
 /** @param {string} name */
 function removeTag(name) {
   document.getElementById(`${name}Chip`).remove();
+  tags.delete(name);
   const option = document.getElementById(`opt${name}`);
   option.hidden = false;
 }
@@ -156,6 +166,46 @@ function removeStep(step) {
   document.getElementById(`step${step}Li`).remove();
 }
 
+function submitRecipe() {
+  let ingredients = [];
+  const ingNodes = document.getElementById("ingredients").children;
+  for (const node of ingNodes) {
+    const inputGroup = node.firstChild;
+    const amt = inputGroup.childNodes.item(1);
+    const name = inputGroup.childNodes.item(3);
+    ingredients.push(`${amt.value} ${name.value}`);
+  }
+
+  let prepTime = document.getElementById("prepTime").value;
+
+  let steps = [];
+  const stepNodes = document.getElementById("steps").children;
+  for (const node of stepNodes) {
+    if (node.id === "newStepLi") continue;
+
+    const row = node.firstChild;
+    const inputGroup = row.firstChild;
+    const step = inputGroup.childNodes.item(1);
+    steps.push(step.value);
+  }
+
+  let recipe = new Recipe({
+    id: nextRecipeId++,
+    name: document.getElementById("name").value,
+    category: document.getElementById("category").value,
+    ingredients: ingredients,
+    dietary: tags.entries().toArray(),
+    season: document.getElementById("season").value,
+    cuisine: document.getElementById("cuisine").value,
+    prep_time: `${prepTime} min`,
+    difficulty: document.getElementById("difficulty").value,
+    images: [],
+    steps: steps,
+  });
+
+  ALL_RECIPES.set(recipe.id, recipe);
+}
+
 /**
  * Everything below runs immediately on page load.
  */
@@ -165,3 +215,4 @@ document
 tagSelect.addEventListener("input", () => addTag(tagSelect.value));
 await reloadCuisines();
 document.getElementById("addStepBtn").addEventListener("click", addStep);
+document.getElementById("subRecipe").addEventListener("click", submitRecipe);
