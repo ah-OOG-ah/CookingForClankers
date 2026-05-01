@@ -150,3 +150,11 @@ body {
 [data-bs-theme="dark"] .btn-outline-contrast {
   @extend .btn-outline-light;
 }
+
+.text-contrast {
+  @extend .text-dark;
+}
+
+[data-bs-theme="dark"] .text-contrast {
+  @extend .text-light;
+}
