@@ -239,8 +239,8 @@ Presentation.
 - [ ] (List of your identified fixes/improvements.)
   - [x] Vertically shrink carousel on mobile, it shouldn't take more than a full screen. _JE_
   - [x] Make sure the hamburger menu and light/dark theme button work properly on mobile. _JE_
-  - [ ] Make sure recipe cards never extend wider than a phone screen - specifically, check Bruschetta with tomato and basil.
-  - [ ] Confirm search layout works on mobile.
+  - [x] Make sure recipe cards never extend wider than a phone screen - specifically, check Bruschetta with tomato and basil. _JE_
+  - [x] Confirm search layout works on mobile. _JE_
   - [x] Make search more relaxed. _DA_
   - [x] Change ingredient multiplier update event. _DA_
   - [ ] Fix submission and share button on light mode_AJ_in progress
