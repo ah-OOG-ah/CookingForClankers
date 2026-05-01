@@ -141,7 +141,7 @@ function addStep() {
   inputGroup.appendChild(input);
 
   const button = document.createElement("button");
-  button.className = "btn btn-primary";
+  button.className = "btn btn-secondary";
   button.formAction = "";
   button.type = "button";
   button.innerText = "REMOVE";
