@@ -243,8 +243,8 @@ Presentation.
   - [ ] Confirm search layout works on mobile.
   - [x] Make search more relaxed. _DA_
   - [x] Change ingredient multiplier update event. _DA_
-  - [ ] Fix submission button on light mode
-  - [ ] Make stars larger and easier to click on mobile
+  - [ ] Fix submission and share button on light mode_AJ_in progress
+  - [ ] Make stars larger and easier to click on mobile_AJ_in progress
 
 ## Credits
 
