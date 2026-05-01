@@ -156,13 +156,38 @@
             </select>
           </div>
         </div>
+
+        <fieldset>
+          <label class="form-label">Steps:</label>
+          <div class="col">
+            <ol id="steps">
+              <li id="newStepLi">
+                <div class="row mb-2 ps-2">
+                  <div class="col-sm-9 input-group">
+                    <label class="visually-hidden" for="newStep">
+                      New Step
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="newStep"
+                      id="newStep"
+                    />
+                    <button
+                      class="btn btn-primary"
+                      formaction=""
+                      type="button"
+                      id="addStepBtn"
+                    >
+                      ADD
+                    </button>
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </fieldset>
         <!--TODO is image uploading in scope?-->
-        <!--
-         /** @type number */
-  id;
-  /** @type {string[]} */
-  steps;
-         -->
       </form>
     </main>
 

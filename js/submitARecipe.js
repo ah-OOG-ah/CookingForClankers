@@ -1,7 +1,8 @@
 import { Cuisine, fetchAllRecipes } from "./recipe_data.js";
 
-let nextId = 0xffff;
+let nextRecipeId = 0xffff;
 let ingId = 1;
+let stepId = 1;
 
 /** @type HTMLInputElement */
 const nextAmt = document.getElementById("newIngAmt");
@@ -107,6 +108,48 @@ async function reloadCuisines() {
   }
 }
 
+/** @type HTMLOListElement */
+const stepList = document.getElementById("steps");
+/** @type HTMLLIElement */
+const newStepLi = document.getElementById("newStepLi");
+/** @type HTMLInputElement */
+const newStep = document.getElementById("newStep");
+
+function addStep() {
+  const id = stepId++;
+  const li = document.createElement("li");
+  li.id = `step${id}Li`;
+
+  const row = document.createElement("div");
+  row.className = "row mb-2 ps-2";
+  li.appendChild(row);
+
+  const inputGroup = document.createElement("div");
+  inputGroup.className = "col-sm-9 input-group";
+  row.appendChild(inputGroup);
+
+  const label = document.createElement("label");
+  label.className = "visually-hidden";
+  label.htmlFor = `step${id}`;
+  inputGroup.appendChild(label);
+
+  const input = document.createElement("input");
+  input.type = "text";
+  input.className = "form-control";
+  input.name = input.id = `step${id}`;
+  input.value = newStep.value;
+  inputGroup.appendChild(input);
+
+  const button = document.createElement("button");
+  button.className = "btn btn-primary";
+  button.formAction = "";
+  button.type = "button";
+  button.innerText = "REMOVE";
+  inputGroup.appendChild(button);
+
+  stepList.insertBefore(li, newStepLi);
+}
+
 /**
  * Everything below runs immediately on page load.
  */
@@ -115,3 +158,4 @@ document
   .addEventListener("click", addIngredient);
 tagSelect.addEventListener("input", () => addTag(tagSelect.value));
 await reloadCuisines();
+document.getElementById("addStepBtn").addEventListener("click", addStep);
