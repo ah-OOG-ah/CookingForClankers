@@ -56,6 +56,11 @@ export class Season {
   static ALL = "All";
 }
 
+export class Cuisine {
+  /** @type {Set<string>} */
+  static VALUES = new Set();
+}
+
 export class Difficulty {
   static MODERATE = "Moderate";
   static EASY = "Easy";
@@ -75,8 +80,10 @@ export class Difficulty {
 
 export class Recipe {
   // The following properties come from the JSON files
-  id; // number
-  name; // string
+  /** @type number */
+  id;
+  /** @type string */
+  name;
   /** @type string. See Category for valid values. **/
   category;
   /** @type {string[]} **/
@@ -85,12 +92,16 @@ export class Recipe {
   dietary;
   /** @type string. See Season for valid values. **/
   season;
-  cuisine; // string
-  prep_time; // string
-  difficulty; // string
+  /** @type string */
+  cuisine;
+  /** @type string */
+  prep_time;
+  /** @type string */
+  difficulty;
   /** @type {string[]} **/
   images;
-  steps; // string[]
+  /** @type {string[]} */
+  steps;
 
   // And the next ones are calculated for indexing
   /** @type string **/
@@ -102,6 +113,9 @@ export class Recipe {
 
   constructor(obj) {
     obj && Object.assign(this, obj);
+
+    Cuisine.VALUES.add(this.cuisine);
+
     this.ingredientString = this.ingredients.join(" ");
     this.prepMinutes = this.#getPrepMinutes(this.prep_time);
     this.difficultyLevel = Difficulty.toLevel(this.difficulty);

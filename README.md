@@ -43,29 +43,29 @@ scp -r <user>@csc391-vm1.eng.franciscan.edu:/srv/csc391support/files/for-realsie
 
 ### Milestone 2 - Supervisor Update
 
-- [ ] By now, all the [Required Features](#required-features) must be functional
-- [ ] [Tasks](#tasks) 0-7 completed
+- [x] By now, all the [Required Features](#required-features) must be functional
+- [x] [Tasks](#tasks) 0-7 completed
   - [x] [Task 2](#-task-2-setting-up-the-basic-html-structure)
   - [x] [Task 3](#-task-3-styling-the-site-with-css)
   - [x] [Task 4](#-task-4-recipe-details-page)
   - [x] [Task 5](#-task-5-improving-user-interface-with-animation)
-  - [ ] [Task 6](#-task-6-adding-javascript-for-dynamic-recipe-listings)
-  - [ ] [Task 7](#-task-7-search-functionality)
-- [ ] Optional Features List
-- [ ] Some optional features started
+  - [x] [Task 6](#-task-6-adding-javascript-for-dynamic-recipe-listings)
+  - [x] [Task 7](#-task-7-search-functionality)
+- [x] Optional Features List
+- [x] Some optional features started
 
 ### Milestone 3 - UX/UI Report
 
-- [ ] User Test Results & Improvement Plan
-- [ ] Tasks 0-9 completed
-- [ ] By now, at least 50% of your [optional functionality](#optional-features)
+- [x] User Test Results & Improvement Plan
+- [x] Tasks 0-9 completed
+- [x] By now, at least 50% of your [optional functionality](#optional-features)
       choices must be completed and functional.
 
 ### Milestone 4 - Full Demo: Finals Week
 
-- [ ] Full Deployment of Final Website
-- [ ] All tasks completed
-- [ ] Full functionality (Required and Optional Features) must be deployed
+- [x] Full Deployment of Final Website
+- [x] All tasks completed
+- [x] Full functionality (Required and Optional Features) must be deployed
 
 ## Required Features
 
@@ -73,14 +73,14 @@ scp -r <user>@csc391-vm1.eng.franciscan.edu:/srv/csc391support/files/for-realsie
       _DA_
 - [x] **Recipe Cards**: Interactive recipe cards with thumbnails, descriptions,
       and like buttons. (15 Points) _JE_
-- [ ] **Search Functionality**: Real-time search for recipes by name.(10 Points)
+- [x] **Search Functionality**: Real-time search for recipes by name.(10 Points) _DA_
 - [x] **Recipe Detail Pages**: Each page displays ingredients, instructions, and
       additional details for the corresponding recipe. (15 Points) _JE_
 - [x] **Favorites Page**: A dedicated page for saved recipes using persistent
       local storage. (10 Points) _JE_
-- [ ] **Visual Design** Appealing, functional, no seizure-induction elements.
+- [x] **Visual Design** Appealing, functional, no seizure-induction elements.
       Consistent color schemes, typography, and smooth animations. Wayfinding
-      elements throughout the website. (20 Points)
+      elements throughout the website. (20 Points) _AJ_
 
 Total Points From Standard Requirements = 80
 
@@ -89,13 +89,13 @@ Total Points From Standard Requirements = 80
 - [x] Recipe sharing links _DA_
 - [x] Ingredient multiplication _DA_
 - [x] Advanced dynamic search _DA_
-- [x] Theme switcher_JE
-- [] Recipe submission form
-- [] Cooking timer_AD
-- [] User ratings and reviews
-- [] Dynamic recipe filter and sorting
-- [] Animations for recipe actions (partially done!)
-- [] Recipe of the day feature
+- [x] Theme switcher _JE_
+- [x] Recipe submission form _DA_
+- [x] Cooking timer _AJ_
+- [x] User ratings and reviews _JE_
+- [x] Dynamic recipe filter and sorting _DA_
+- [x] Animations for recipe actions _AJ_
+- [x] Recipe of the day feature _JE_
 
 ## Tasks
 
@@ -191,23 +191,23 @@ Total Points From Standard Requirements = 80
 - [x] Implement smooth scrolling for navigation. _AJ_
 - [x] Add feedback animations for buttons (e.g., a "Favorite" button toggle). _AJ_
 
-### 🟡 Task 6: Adding JavaScript for Dynamic Recipe Listings
+### 🟢 Task 6: Adding JavaScript for Dynamic Recipe Listings
 
 **Goal**: Display recipe data dynamically using JavaScript.
 
 - [x] Use a sample JSON file or JavaScript object to store recipe data.
-- [ ] Write JavaScript to dynamically populate recipe cards on the homepage.
+- [x] Write JavaScript to dynamically populate recipe cards on the homepage.
 - [x] Implement a "Load More" button for paginated recipe listings. _DA_
 
-### 🟡 Task 7: Search Functionality
+### 🟢 Task 7: Search Functionality
 
 **Goal**: Enable users to search for recipes.
 
 - [x] Add a search bar to the website. _DA_
 - [x] Write JavaScript to filter recipes based on user input. _DA_
-- [ ] Highlight the search results and ensure usability.
+- [x] Highlight the search results and ensure usability. _DA_
 
-### 🟡 Task 8: Optional Features (longer task)
+### 🟢 Task 8: Optional Features (longer task)
 
 **Goal**: Complete your Optional Features to identify weak points in your UI
 tests.
@@ -216,35 +216,36 @@ tests.
 - [x] Ingredient multiplication _DA_
 - [x] Advanced dynamic search _DA_
 - [x] Theme switcher _JE_
-- [] Recipe submission form
+- [x] Recipe submission form _DA_
 - [x] Cooking timer _AD_
 - [x] User ratings and reviews _JE_
-- [] Dynamic recipe filter and sorting
-- [] Animations for recipe actions (partially done!)
+- [x] Dynamic recipe filter and sorting _DA_
+- [x] Animations for recipe actions _AJ_
 - [x] Recipe of the day feature _JE_
 
-### 🟡 Task 9: Usability Testing
+### 🟢 Task 9: Usability Testing
 
 **Goal**: Refine the website based on user feedback.
 
 - [x] Conduct UX tests with peers or target users.
 - [x] Collect feedback on navigation, features, and design.
-- [ ] Implement changes to address usability issues.
+- [x] Implement changes to address usability issues.
 
-### 🔴 Task 10: Implement Final Fixes
+### 🟢 Task 10: Implement Final Fixes
 
 **Goal**: Implement the fixes/improvements identified in your UX/UI
 Presentation.
 
-- [ ] (List of your identified fixes/improvements.)
-  - [ ] Vertically shrink carousel on mobile, it shouldn't take more than a full screen.
-  - [ ] Make sure the hamburger menu and light/dark theme button work properly on mobile.
-  - [ ] Make sure recipe cards never extend wider than a phone screen - specifically, check Bruschetta with tomato and basil.
-  - [ ] Confirm search layout works on mobile.
-  - [ ] Make search more relaxed.
-  - [ ] Change ingredient multiplier update event.
-  - [ ] Fix submission button on light mode
-  - [ ] Make stars larger and easier to click on mobile
+- [x] (List of your identified fixes/improvements.)
+  - [x] Vertically shrink carousel on mobile, it shouldn't take more than a full screen. _JE_
+  - [x] Make sure the hamburger menu and light/dark theme button work properly on mobile. _JE_
+  - [x] Make sure recipe cards never extend wider than a phone screen - specifically, check Bruschetta with tomato and basil. _JE_
+  - [x] Confirm search layout works on mobile. _JE_
+  - [x] Make search more relaxed. _DA_
+  - [x] Change ingredient multiplier update event. _DA_
+  - [x] Fix submission and share button on light mode _JE_
+  - [x] Make stars larger and easier to click on mobile _AJ_
+  - [x] Timer makes recipe page layout funky on mobile _JE_
 
 ## Credits
 

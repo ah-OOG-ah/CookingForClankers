@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+      charset="UTF-8"
+    />
+    <title>Cooking for Clankers</title>
+
+    <link rel="stylesheet" href="css/generic.css" />
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    <!--    <script src="js/recipe_data.js" type="module"></script>-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="js/theme-toggle.js" defer></script>
+    <script type="module" src="js/submitARecipe.js"></script>
+  </head>
+  <body>
+    <header-component active-page="SUBMIT"></header-component>
+
+    <main class="container">
+      <form id="form">
+        <div class="row mb-2">
+          <label for="name" class="col-sm-3 col-form-label">Recipe Name:</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" name="name" id="name" />
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <label for="category" class="col-sm-3 col-form-label">
+            Category:
+          </label>
+          <div class="col-sm-9">
+            <select class="form-select" name="category" id="category">
+              <option>Appetizers</option>
+              <option>Autumn</option>
+              <option>Beverages</option>
+              <option>Breakfast</option>
+              <option>Desserts</option>
+              <option>Dinner</option>
+              <option>Lunch</option>
+              <option>Snacks</option>
+              <option>Spring</option>
+              <option>Summer</option>
+              <option>Winter</option>
+            </select>
+          </div>
+        </div>
+
+        <fieldset>
+          <label class="form-label">Ingredients:</label>
+          <div class="col" id="ingredients"></div>
+          <div class="row mb-2">
+            <div class="col-sm-9 input-group">
+              <label class="visually-hidden" for="newIngAmt">Amount</label>
+              <input
+                type="number"
+                class="form-control"
+                name="newIngAmt"
+                id="newIngAmt"
+              />
+              <label class="visually-hidden" for="newIngredient">
+                New Ingredient
+              </label>
+              <input
+                type="text"
+                class="w-50 form-control"
+                name="newIngredient"
+                id="newIngredient"
+              />
+              <button
+                class="btn btn-primary"
+                formaction=""
+                type="button"
+                id="addIngredientBtn"
+              >
+                ADD
+              </button>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="row">
+          <label class="col-sm-3 col-form-label form-label" for="tags">
+            Tags:
+          </label>
+          <div class="col-sm-9">
+            <select class="form-select" name="tags" id="tags">
+              <option selected>---</option>
+              <option id="optGluten-Free">Gluten-Free</option>
+              <option id="optHigh-Protein">High-Protein</option>
+              <option id="optVegan">Vegan</option>
+              <option id="optVegetarian">Vegetarian</option>
+            </select>
+          </div>
+        </div>
+        <div id="tagList" class="mb-2"></div>
+
+        <div class="row mb-2">
+          <label for="season" class="col-sm-3 col-form-label"> Season: </label>
+          <div class="col-sm-9">
+            <select class="form-select" name="season" id="season">
+              <option>Spring</option>
+              <option>Summer</option>
+              <option>Autumn</option>
+              <option>Winter</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <label for="cuisine" class="col-sm-3 col-form-label">
+            Cuisine:
+          </label>
+          <div class="col-sm-9">
+            <input
+              class="form-control"
+              type="text"
+              list="cuisineList"
+              name="cuisine"
+              id="cuisine"
+            />
+            <datalist id="cuisineList"> </datalist>
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <label for="prepTime" class="col-sm-3 col-form-label">
+            Prep Time (minutes):
+          </label>
+          <div class="col-sm-9">
+            <input
+              class="form-control"
+              type="number"
+              name="prepTime"
+              id="prepTime"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-2">
+          <label for="difficulty" class="col-sm-3 col-form-label">
+            Difficulty:
+          </label>
+          <div class="col-sm-9">
+            <select class="form-select" name="difficulty" id="difficulty">
+              <option>Easy</option>
+              <option>Moderate</option>
+            </select>
+          </div>
+        </div>
+
+        <fieldset>
+          <label class="form-label">Steps:</label>
+          <div class="col">
+            <ol id="steps">
+              <li id="newStepLi">
+                <div class="row mb-2 ps-2">
+                  <div class="col-sm-9 input-group">
+                    <label class="visually-hidden" for="newStep">
+                      New Step
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="newStep"
+                      id="newStep"
+                    />
+                    <button
+                      class="btn btn-primary"
+                      formaction=""
+                      type="button"
+                      id="addStepBtn"
+                    >
+                      ADD
+                    </button>
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </fieldset>
+        <!--TODO is image uploading in scope?-->
+
+        <button
+          formaction=""
+          type="reset"
+          class="btn btn-primary"
+          id="subRecipe"
+        >
+          SUBMIT
+        </button>
+      </form>
+    </main>
+
+    <footer-component></footer-component>
+  </body>
+</html>

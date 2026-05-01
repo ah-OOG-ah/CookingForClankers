@@ -10,7 +10,7 @@ class Footer extends HTMLElement {
         href="https://github.com/ah-OOG-ah/CookingForClankers"
         target="blank"
         target="noopener noreferrer"
-        class="text-light"
+        class="text-contrast"
       >
         <i class="bi bi-github fs-1"></i>
       </a>

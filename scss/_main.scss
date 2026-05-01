@@ -86,6 +86,7 @@ recipe-card .card {
   border-radius: 99999px;
   padding: 0.25em 0.5em;
   font-size: small;
+  display: inline-block;
 
   border: 1px solid #424549;
   background-color: #42454910;
@@ -140,4 +141,20 @@ body {
       transform: rotate(180deg);
     }
   }
+}
+
+.btn-outline-contrast {
+  @extend .btn-outline-dark;
+}
+
+[data-bs-theme="dark"] .btn-outline-contrast {
+  @extend .btn-outline-light;
+}
+
+.text-contrast {
+  @extend .text-dark;
+}
+
+[data-bs-theme="dark"] .text-contrast {
+  @extend .text-light;
 }

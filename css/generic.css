@@ -3206,7 +3206,7 @@ textarea.form-control-lg {
   --bs-gradient: none;
 }
 
-.btn-outline-light {
+.btn-outline-light, [data-bs-theme=dark] .btn-outline-contrast {
   --bs-btn-color: #f8f9fa;
   --bs-btn-border-color: #f8f9fa;
   --bs-btn-hover-color: #000;
@@ -3223,7 +3223,7 @@ textarea.form-control-lg {
   --bs-gradient: none;
 }
 
-.btn-outline-dark {
+.btn-outline-dark, .btn-outline-contrast {
   --bs-btn-color: #212529;
   --bs-btn-border-color: #212529;
   --bs-btn-hover-color: #fff;
@@ -8405,12 +8405,12 @@ textarea.form-control-lg {
   color: rgba(var(--bs-danger-rgb), var(--bs-text-opacity)) !important;
 }
 
-.text-light {
+.text-light, [data-bs-theme=dark] .text-contrast {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-light-rgb), var(--bs-text-opacity)) !important;
 }
 
-.text-dark {
+.text-dark, .text-contrast {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
 }
@@ -20268,6 +20268,7 @@ recipe-card .card:hover .recipe-img-final, recipe-card .card:hover img {
   border-radius: 99999px;
   padding: 0.25em 0.5em;
   font-size: small;
+  display: inline-block;
   border: 1px solid #424549;
   background-color: rgba(66, 69, 73, 0.062745098);
 }

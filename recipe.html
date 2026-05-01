@@ -45,11 +45,12 @@
               <span class="chip recipe-season"></span>
             </div>
 
-            <recipe-timer id="recipeTimer" recipe-id=""></recipe-timer>
-
-            <div>
-              <button id="shareBtn" class="btn btn-outline-light">Share</button>
+            <div class="text-end">
+              <button id="shareBtn" class="btn btn-outline-contrast mb-2">
+                Share
+              </button>
               <i class="favorite-btn" role="button"></i>
+              <recipe-timer id="recipeTimer" recipe-id=""></recipe-timer>
             </div>
           </div>
 
@@ -87,7 +88,7 @@
           </div>
           <textarea id="reviewComment" class="form-control my-2"></textarea>
           <div class="text-center">
-            <button id="submitReview" class="btn btn-outline-light">
+            <button id="submitReview" class="btn btn-outline-contrast">
               Submit Review
             </button>
           </div>
@@ -107,7 +108,7 @@
         <div class="modal-content">
           <div class="modal-body">
             <p>Copy this link!</p>
-            <code id="linkText" class="text-light"></code>
+            <code id="linkText" class="text-contrast"></code>
             <br />
             <button class="btn btn-primary mt-3" data-bs-dismiss="modal">
               Close

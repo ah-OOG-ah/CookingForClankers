@@ -16,11 +16,13 @@ const searchInput = document.getElementById("searchSpan");
 searchInput.value = searchString;
 /** @type HTMLInputElement **/
 const ingredientInput = document.getElementById("ingredients");
+/** @type {Set<string>} */
+const tagFilters = new Set();
 
 /** @type {Fuse<Recipe>} A Fuse index on the recipes, using only the name as a key. **/
 const fuseNamesOnly = new Fuse(ALL_RECIPES.values().toArray(), {
   keys: ["name"],
-  threshold: 0.2,
+  threshold: 0.3,
   useTokenSearch: true,
 });
 // noinspection JSValidateTypes The proper types are sadly only visible with Typescript.
@@ -78,6 +80,10 @@ function updateResults() {
 
   for (const filter of filters) {
     results = results.filter((v, i, a) => filter(v));
+  }
+
+  for (const tag of tagFilters) {
+    results = results.filter((v, i, a) => v.dietary.indexOf(tag) !== -1);
   }
 
   // Sort the results according to the user's wishes. All of these sorts should sort
@@ -142,6 +148,49 @@ function updatePage() {
   initFavorites();
 }
 
+/** @type HTMLSelectElement */
+const tagSelect = document.getElementById("tags");
+/** @type HTMLDivElement */
+const tagList = document.getElementById("tagList");
+
+/** @param {string} name */
+function addTag(name) {
+  if (name === "---") return;
+
+  const tag = document.createElement("span");
+  tag.id = `${name}Chip`;
+  tag.className = `chip m-1 ${name}`;
+  tag.innerText = `${name}`;
+
+  const closeBtn = document.createElement("button");
+  closeBtn.className = "btn-close";
+  closeBtn.onclick = () => {
+    removeTag(name);
+    // This is called manually, because the button press doesn't count as a form input.
+    updateResults();
+  };
+  tag.appendChild(closeBtn);
+
+  tagList.appendChild(tag);
+  tagFilters.add(name);
+  // Make sure the user can't double-select a tag
+  const option = document.getElementById(`opt${name}`);
+  option.hidden = true;
+  tagSelect.selectedIndex = 0;
+}
+
+/** @param {string} name */
+function removeTag(name) {
+  document.getElementById(`${name}Chip`).remove();
+  tagFilters.delete(name);
+  const option = document.getElementById(`opt${name}`);
+  option.hidden = false;
+}
+
+/**
+ * Everything below runs when the page loads.
+ */
+
 await fetchAllStories();
 loadMore();
 updatePage();
@@ -152,3 +201,4 @@ document.getElementById("loadMore").addEventListener("click", () => {
 
 filterForm.addEventListener("input", updateResults);
 searchInput.addEventListener("input", updateResults);
+tagSelect.addEventListener("input", () => addTag(tagSelect.value));

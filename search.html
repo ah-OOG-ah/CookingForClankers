@@ -27,6 +27,12 @@
     <header-component></header-component>
 
     <main class="container">
+      <h3>
+        <label
+          >Search results for: <input id="searchSpan" class="form-control"
+        /></label>
+      </h3>
+
       <form id="filters">
         <div class="row">
           <div class="col">
@@ -84,6 +90,15 @@
                   name="ingredients"
                   id="ingredients"
                 />
+                <label class="form-label" for="tags"> Tags: </label>
+                <select class="form-select" name="tags" id="tags">
+                  <option selected>---</option>
+                  <option id="optGluten-Free">Gluten-Free</option>
+                  <option id="optHigh-Protein">High-Protein</option>
+                  <option id="optVegan">Vegan</option>
+                  <option id="optVegetarian">Vegetarian</option>
+                </select>
+                <div id="tagList" class="p-2"></div>
               </div>
             </fieldset>
           </div>
@@ -91,9 +106,6 @@
       </form>
       <br />
 
-      <h3>
-        <label>Search results for: <input id="searchSpan" /></label>
-      </h3>
       <p>
         Showing <span id="shownCount"></span> of
         <span id="totalCount"></span> results found.
@@ -102,10 +114,12 @@
 
       <div class="d-flex justify-content-evenly mt-4">
         <div id="loadMoreCol">
-          <button id="loadMore" class="btn btn-outline-light">Load More</button>
+          <button id="loadMore" class="btn btn-outline-contrast">
+            Load More
+          </button>
         </div>
         <div>
-          <a href="#top" class="btn btn-outline-light">Back to Top</a>
+          <a href="#top" class="btn btn-outline-contrast">Back to Top</a>
         </div>
       </div>
     </main>
