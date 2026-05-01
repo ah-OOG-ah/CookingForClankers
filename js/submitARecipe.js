@@ -145,9 +145,15 @@ function addStep() {
   button.formAction = "";
   button.type = "button";
   button.innerText = "REMOVE";
+  button.onclick = () => removeStep(id);
   inputGroup.appendChild(button);
 
   stepList.insertBefore(li, newStepLi);
+}
+
+/** @param {number} step */
+function removeStep(step) {
+  document.getElementById(`step${step}Li`).remove();
 }
 
 /**
