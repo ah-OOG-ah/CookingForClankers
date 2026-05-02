@@ -249,7 +249,7 @@ Presentation.
 
 ## Credits
 
-Note: some features were signed-off in th elist above, this list may be incomplete.
+Note: some features were signed-off in the list above, this list may be incomplete.
 Features _not_ signed-off on were typically done by two or three team members.
 
 Dominic Antony
