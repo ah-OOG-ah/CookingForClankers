@@ -248,6 +248,8 @@ Presentation.
   - [x] Timer makes recipe page layout funky on mobile _JE_
 
 ## Credits
+Note: some features were signed-off in th elist above, this list may be incomplete.
+Features *not* signed-off on were typically done by two or three team members.
 
 Dominic Antony
 
@@ -257,6 +259,7 @@ Dominic Antony
 - Index page
 - Search page
 - Recipe sharing button
+- Recipe submission page
 
 Jonah Ebent
 
@@ -278,4 +281,4 @@ SFE128 data set/old CSC391 dataset, for recipe image sources.
 
 Gemini, for the logo.
 
-Grok, for the main page blurbs and "testimonials".
+Grok, for the main page blurbs, "testimonials", and Grok Ramsey quotes.
